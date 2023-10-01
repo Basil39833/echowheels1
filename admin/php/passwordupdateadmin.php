@@ -32,7 +32,7 @@ if ($row['password'] == $currentpass)
             icon: 'success',
             text: 'Admin Password updated',
             didClose: () => {
-              window.location.replace('../index.php');
+              window.location.replace('../activeuser.php');
             }
           });
           </script>

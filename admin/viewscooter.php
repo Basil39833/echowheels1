@@ -39,10 +39,15 @@ include("header.php");
                         <h5 class="card-title"><?php echo $row['scooter_name']; ?></h5>
                             <p class="card-text"><b>Category:</b> <?php echo $row['scooter_category']; ?></p>
                             <p class="card-text"><b>Color:</b> <?php echo $row['color']; ?></p>
-                            
+                            <p class="card-text"><b>Brand:</b> <?php echo $row['scooter_brand']; ?></p>
+                            <p class="card-text"><b>Stock:</b> <?php echo $row['stock']; ?></p>
                             <p class="card-text"><b>Description:</b> <?php echo $row['description']; ?></p>
                             <p class="card-text"><b>Rate:</b> <?php echo $row['amount']; ?></p>
-
+                            <p> 
+                      <div class="btn-group">
+                      <a href="" class="btn btn-success btn">Update</a>
+                        
+                      </div></p>
                         </div>
                         <!--<div class="card-footer text-muted">
 

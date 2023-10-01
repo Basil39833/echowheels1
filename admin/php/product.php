@@ -18,12 +18,13 @@
         $scooterbrand = $_POST['scooterbrand'];
         $scooterplatenumber = $_POST['platenumber'];
         $color = $_POST['color'];
+        $stock = $_POST['stock'];
         $description = $_POST['description'];
         $amount = $_POST['amount'];
         
 
-        $sql = "INSERT INTO product(image,scooter_name,scooter_category,scooter_model_year,scooter_brand,scooter_plate_number,color,description,amount)
-         VALUES ('$photo','$scootername','$scootercategory','$scootermodelyear','$scooterbrand','$scooterplatenumber','$color','$description','$amount')";
+        $sql = "INSERT INTO product(image,scooter_name,scooter_category,scooter_model_year,scooter_brand,scooter_plate_number,color,stock,description,amount)
+         VALUES ('$photo','$scootername','$scootercategory','$scootermodelyear','$scooterbrand','$scooterplatenumber','$color','$stock','$description','$amount')";
         insert_data($sql);
 
         $targetDirectory = "../uploads/products/";

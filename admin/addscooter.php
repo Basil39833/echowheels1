@@ -127,6 +127,13 @@ include("header.php");
                     <textarea class="form-control" style="height: 100px"  id="description" name="description" required=""></textarea>
                   </div>
                 </div>
+
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Stock</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="stock" name="stock" required="">
+                  </div>
+                </div>
                
                
 

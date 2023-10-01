@@ -498,12 +498,22 @@ require("../connect.php");
         </a>
       </li><!-- End Register Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-        <i class="bi bi-envelope"></i>
-          <span>Notification</span>
-        </a>
-      </li><!-- End Login Page Nav -->
+      <li class="nav-item dropdown">
+
+<a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+  <i class="bi bi-chat-left-text"></i>
+  <span>Notifcation</span>
+  <span class="badge bg-success badge-number">2</span>
+</a><!-- End Messages Icon -->
+
+<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+  <li class="dropdown-header">
+    You have new messages
+    <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+  </li>
+</ul>
+      <li><!--end of notification --></li>    
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href=./contact.php>

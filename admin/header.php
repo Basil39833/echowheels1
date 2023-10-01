@@ -507,7 +507,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" href=./viewscooter.php>
-        <i class="bi bi-envelope"></i>
+        <i class="bi bi-card-list"></i>
           <span>ViewScooter</span>
         </a>
       </li><!-- End Error 404 Page Nav -->
