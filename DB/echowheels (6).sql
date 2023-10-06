@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2023 at 11:52 AM
+-- Generation Time: Oct 06, 2023 at 12:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -79,6 +79,32 @@ INSERT INTO `district` (`district_id`, `district_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `hour`
+--
+
+CREATE TABLE `hour` (
+  `hour_id` int(11) NOT NULL,
+  `hour` time NOT NULL,
+  `day` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `hour`
+--
+
+INSERT INTO `hour` (`hour_id`, `hour`, `day`) VALUES
+(3, '01:00:00', '0'),
+(4, '01:30:00', '0'),
+(5, '02:00:00', '0'),
+(6, '02:30:00', '0'),
+(7, '03:00:00', '0'),
+(8, '03:30:00', '0'),
+(9, '04:00:00', '0'),
+(10, '05:00:00', '0');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login`
 --
 
@@ -97,6 +123,47 @@ INSERT INTO `login` (`email_id`, `password`, `user_type`, `user_status`) VALUES
 ('admin1234@gmail.com', 'admin1234', '0', '1'),
 ('basilkreji14@gmail.com', 'basil', '1', '1'),
 ('benson123@gmail.com', 'benson', '1', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `metrostations`
+--
+
+CREATE TABLE `metrostations` (
+  `metrostation_id` int(50) NOT NULL,
+  `metrostation_name` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `metrostations`
+--
+
+INSERT INTO `metrostations` (`metrostation_id`, `metrostation_name`) VALUES
+(1, 'Aluva'),
+(2, 'Pulinchodu'),
+(3, 'Companypady'),
+(4, 'Ambattukavu'),
+(5, 'Muttom'),
+(6, 'Kalamassery'),
+(7, 'CUSAT'),
+(8, 'Pathadipalam'),
+(9, 'Edapally'),
+(10, 'Changampuzha Park'),
+(11, 'Palarivattom'),
+(12, 'JLN Stadium'),
+(13, 'Kaloor'),
+(14, 'Town Hall'),
+(15, 'MG Road'),
+(16, 'Maharaja’s College'),
+(17, 'Ernakulam South'),
+(18, 'Kadavanthra'),
+(19, 'Elamkulam'),
+(20, 'Vyttila'),
+(21, 'Thaikoodam'),
+(22, 'Pettah'),
+(23, 'Vadakkekotta'),
+(24, 'SN Junction');
 
 -- --------------------------------------------------------
 
@@ -123,9 +190,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
-(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat Green', '5', 'well maintained', '200'),
-(12, 's1progen2image.png', 's1 progen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '5', 'well maintained', '200'),
-(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '200');
+(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat Green', '5', 'well maintained', '90/hr'),
+(12, 's1progen2image.png', 's1 progen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '5', 'well maintained', '90/hr'),
+(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '70/hr');
 
 -- --------------------------------------------------------
 
@@ -171,10 +238,22 @@ ALTER TABLE `district`
   ADD PRIMARY KEY (`district_id`);
 
 --
+-- Indexes for table `hour`
+--
+ALTER TABLE `hour`
+  ADD PRIMARY KEY (`hour_id`);
+
+--
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`email_id`);
+
+--
+-- Indexes for table `metrostations`
+--
+ALTER TABLE `metrostations`
+  ADD PRIMARY KEY (`metrostation_id`);
 
 --
 -- Indexes for table `product`
@@ -203,6 +282,18 @@ ALTER TABLE `complaint`
 --
 ALTER TABLE `district`
   MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `hour`
+--
+ALTER TABLE `hour`
+  MODIFY `hour_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `metrostations`
+--
+ALTER TABLE `metrostations`
+  MODIFY `metrostation_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `product`

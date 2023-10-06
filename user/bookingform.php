@@ -84,13 +84,88 @@ $id=$_GET['id'];
                   <input name="useremail" type="text" class="form-control" id="useremail" value= <?php echo $arr1['email_id'];?>>
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <label for="inputDate" class="col-sm-2 col-form-label">No Of Days For Rent</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-                <div class="row mb-3">
+
+                <div class="row mb-3">                
+                <label for="pickup place" class="col-sm-2 col-form-label">Pickup Station</label>
+                <div class="col-sm-10">
+              <div class="form-control">
+							<span class="fa fa-map-marker" aria-hidden="true"></span>
+								<select class="form-input"  name="pickup">
+                                    <option selected disabled>Select Station </option>
+                                    <?php
+									
+                                    $sql = "select * from metrostations";
+                                    $result = select_data($sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                      while ($arr = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                        <option value="<?php echo $arr['metrostation_name']; ?>">
+                                          <?php echo $arr['metrostation_name']; ?>
+                                        </option>
+                                    <?php
+                                      }
+                                    }
+                                    ?>
+
+                    		</select>
+						</div>	
+            </div>
+                                  </div>
+
+            <div class="row mb-3">
+                <label for="Drop place" class="col-sm-2 col-form-label">Drop Station</label>
+                <div class="col-sm-10">
+              <div class="form-control">
+							<span class="fa fa-map-marker" aria-hidden="true"></span>
+								<select class="form-input"  name="Drop place">
+                                    <option selected disabled>Select Station </option>
+                                    <?php
+									
+                                    $sql = "select * from metrostations";
+                                    $result = select_data($sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                      while ($arr = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                        <option value="<?php echo $arr['metrostation_name']; ?>">
+                                          <?php echo $arr['metrostation_name']; ?>
+                                        </option>
+                                    <?php
+                                      }
+                                    }
+                                    ?>
+
+                    		</select>
+						   </div>
+            </div>
+                                  </div>
+
+                                  <div class="row mb-3">
+                <label for="Drop place" class="col-sm-2 col-form-label">Rent Hour</label>
+                <div class="col-sm-10">
+              <div class="form-control">
+							<span class="fa fa-map-marker" aria-hidden="true"></span>
+								<select class="form-input"  name="Rent Hours">
+                                    <option selected disabled>Select Hour </option>
+                                    <?php
+									
+                                    $sql = "select * from hour";
+                                    $result = select_data($sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                      while ($arr = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                        <option value="<?php echo $arr['hour']; ?>">
+                                          <?php echo $arr['hour']; ?>
+                                        </option>
+                                    <?php
+                                      }
+                                    }
+                                    ?>
+
+                    		</select>
+						   </div>
+            </div>
+                                  </div>
+                <!--<div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">Drop Date</label>
                   <div class="col-sm-10">
                     <input type="date" class="form-control">
