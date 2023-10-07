@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2023 at 12:35 PM
+-- Generation Time: Oct 07, 2023 at 11:32 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -34,16 +34,18 @@ CREATE TABLE `complaint` (
   `type` varchar(10) NOT NULL,
   `date` date NOT NULL,
   `email_id` varchar(50) NOT NULL,
-  `reply` varchar(10) NOT NULL
+  `reply` varchar(10) NOT NULL,
+  `message` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `complaint`
 --
 
-INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`) VALUES
-(14, 'scooter tire', 'scooters tire have to be changed ', 'scooter', '2023-10-01', 'benson123@gmail.com', '1'),
-(15, 'scooter service', 'scooter have to be serviced', 'servive', '2023-10-01', 'benson123@gmail.com', '1');
+INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`, `message`) VALUES
+(18, 'scooter tyre', 'tyre have to be changed', 'scooter', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
+(19, 'service', 'scooter should be serviced', 'servive', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
+(20, 'website', 'website should be more colour full', 'website', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it');
 
 -- --------------------------------------------------------
 
@@ -84,23 +86,24 @@ INSERT INTO `district` (`district_id`, `district_name`) VALUES
 
 CREATE TABLE `hour` (
   `hour_id` int(11) NOT NULL,
-  `hour` time NOT NULL,
-  `day` varchar(11) NOT NULL
+  `hour` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `hour`
 --
 
-INSERT INTO `hour` (`hour_id`, `hour`, `day`) VALUES
-(3, '01:00:00', '0'),
-(4, '01:30:00', '0'),
-(5, '02:00:00', '0'),
-(6, '02:30:00', '0'),
-(7, '03:00:00', '0'),
-(8, '03:30:00', '0'),
-(9, '04:00:00', '0'),
-(10, '05:00:00', '0');
+INSERT INTO `hour` (`hour_id`, `hour`) VALUES
+(3, '01:00:00'),
+(5, '02:00:00'),
+(7, '03:00:00'),
+(8, '03:30:00'),
+(10, '05:00:00'),
+(13, '06:00:00'),
+(14, '07:00:00'),
+(15, '08:00:00'),
+(16, '09:00:00'),
+(17, '10:00:00');
 
 -- --------------------------------------------------------
 
@@ -190,8 +193,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
-(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat Green', '5', 'well maintained', '90/hr'),
-(12, 's1progen2image.png', 's1 progen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '5', 'well maintained', '90/hr'),
+(11, 's1proimage.jpeg', 's1', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '7', 'Well maintained', '90/hr'),
+(12, 's1progen2image.png', 's1', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '7', 'well maintained', '90/hr'),
 (13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '70/hr');
 
 -- --------------------------------------------------------
@@ -275,7 +278,7 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -287,7 +290,7 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `hour`
 --
 ALTER TABLE `hour`
-  MODIFY `hour_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `hour_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `metrostations`
@@ -299,7 +302,7 @@ ALTER TABLE `metrostations`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `product_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

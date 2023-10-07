@@ -20,8 +20,8 @@ include("header.php");
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
-          <li class="breadcrumb-item">Products</li>
-          <li class="breadcrumb-item active">Add Products</li>
+          <li class="breadcrumb-item">viewscooter</li>
+          <li class="breadcrumb-item active">Update Scooter</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -76,8 +76,8 @@ include("header.php");
                   <div class="col-sm-10">
                   <select class="form-control" name="category" id="category">
                         <option value="" select any> </option>
-                        <option value="Normal">Normal Model</option>
-                        <option value="Top">Top Model</option>
+                        <option value="Normal">Normal Models</option>
+                        <option value="Top">Top Models</option>
                         
                         <!--<option value="VolleyBall">Volleyall</option>-->
                     </select>
@@ -169,9 +169,9 @@ include("header.php");
                 </div>-->
 
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Add Details</label>
+                  <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
-                    <button type="submit" name="add" class="btn btn-primary">Add</button>
+                    <button type="submit" name="add" class="btn btn-primary">Update</button>
                   </div>
                 </div>
 

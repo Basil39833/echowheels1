@@ -2,7 +2,7 @@
 
 require("../connect.php");
 
-   $username = $_SESSION['email_id'];
+   /*$username = $_SESSION['email_id'];*/
    
    ?>
 
@@ -496,7 +496,8 @@ require("../connect.php");
               <i class="bi bi-circle"></i><span>Add products</span>
             </a>
           </li>
-          <li>
+</ul>
+          <!--<li>
             <a href="">
               <i class="bi bi-circle"></i><span>Delete Products</span>
             </a>

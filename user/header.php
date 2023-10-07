@@ -39,7 +39,7 @@ require("../connect.php");
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/styleee.css" rel="stylesheet">
+  <link href="assets/css/styleeeee.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -523,13 +523,21 @@ require("../connect.php");
       </li><!-- End Error 404 Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href=./complaint.php>
-          <i class="bi bi-envelope"></i>
-          <span>Complaint</span>
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-card-list"></i><span>Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      </li><!-- End Contact Page Nav
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="./complaint.php">
+              <i class="bi bi-circle"></i><span>Create Complaints</span>
+            </a>
+          </li>
+          <li>
+            <a href="replayedcomplaints.php">
+              <i class="bi bi-circle"></i><span>Replayed Complaints</span>
+            </a><!-- End Blank Page Nav -->
 
-      <li class="nav-item">
+      <!--<li class="nav-item">
         <a class="nav-link collapsed" href="pages-blank.html">
           <i class="bi bi-file-earmark"></i>
           <span>Blank</span>

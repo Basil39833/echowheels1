@@ -45,9 +45,15 @@ include("header.php");
                             <p class="card-text"><b>Rate:</b> <?php echo $row['amount']; ?></p>
                             <p> 
                       <div class="btn-group">
-                      <a href="" class="btn btn-success btn">Update</a>
+                      <a href="scooterupdate.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Update</a>
                         
-                      </div></p>
+                      </div>
+                      <p> 
+                      <div class="btn-group">
+                      <a href="php/deletescooter.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Delete</a>
+                        
+                      </div>
+                    </p>
                         </div>
                         <!--<div class="card-footer text-muted">
 
