@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2023 at 11:32 AM
+-- Generation Time: Oct 13, 2023 at 12:05 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `echowheels`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `booking_id` int(50) NOT NULL,
+  `scooter_name` varchar(50) NOT NULL,
+  `scooter_category` varchar(50) NOT NULL,
+  `scooter_color` varchar(50) NOT NULL,
+  `scooter_id` int(11) NOT NULL,
+  `scooter_rate` varchar(50) NOT NULL,
+  `user_name` varchar(70) NOT NULL,
+  `user_email` varchar(70) NOT NULL,
+  `pickup_station` varchar(70) NOT NULL,
+  `drop_station` varchar(70) NOT NULL,
+  `booking_date` date NOT NULL,
+  `rent_hours` time NOT NULL,
+  `total` varchar(50) NOT NULL,
+  `payment` int(11) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scooter_color`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `rent_hours`, `total`, `payment`, `status`) VALUES
+(27, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'CUSAT', 'Pulinchodu', '2023-10-13', '05:00:00', '500', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -77,33 +108,6 @@ INSERT INTO `district` (`district_id`, `district_name`) VALUES
 (12, 'Pathanamthitta'),
 (13, 'Kollam'),
 (14, 'Thiruvananthapuram');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `hour`
---
-
-CREATE TABLE `hour` (
-  `hour_id` int(11) NOT NULL,
-  `hour` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `hour`
---
-
-INSERT INTO `hour` (`hour_id`, `hour`) VALUES
-(3, '01:00:00'),
-(5, '02:00:00'),
-(7, '03:00:00'),
-(8, '03:30:00'),
-(10, '05:00:00'),
-(13, '06:00:00'),
-(14, '07:00:00'),
-(15, '08:00:00'),
-(16, '09:00:00'),
-(17, '10:00:00');
 
 -- --------------------------------------------------------
 
@@ -193,9 +197,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
-(11, 's1proimage.jpeg', 's1', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '7', 'Well maintained', '90/hr'),
-(12, 's1progen2image.png', 's1', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '7', 'well maintained', '90/hr'),
-(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '70/hr');
+(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '7', 'Well maintained', '100'),
+(12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '7', 'well maintained', '100'),
+(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '100');
 
 -- --------------------------------------------------------
 
@@ -229,6 +233,12 @@ INSERT INTO `registration` (`first_name`, `last_name`, `contact`, `email_id`, `h
 --
 
 --
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`booking_id`);
+
+--
 -- Indexes for table `complaint`
 --
 ALTER TABLE `complaint`
@@ -239,12 +249,6 @@ ALTER TABLE `complaint`
 --
 ALTER TABLE `district`
   ADD PRIMARY KEY (`district_id`);
-
---
--- Indexes for table `hour`
---
-ALTER TABLE `hour`
-  ADD PRIMARY KEY (`hour_id`);
 
 --
 -- Indexes for table `login`
@@ -275,6 +279,12 @@ ALTER TABLE `registration`
 --
 
 --
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
@@ -285,12 +295,6 @@ ALTER TABLE `complaint`
 --
 ALTER TABLE `district`
   MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `hour`
---
-ALTER TABLE `hour`
-  MODIFY `hour_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `metrostations`
