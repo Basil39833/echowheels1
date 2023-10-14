@@ -30,6 +30,7 @@ $username = $_SESSION['email_id'];
             $sql1 = "select * from product where product_id=$crid";
             $res1 = select_data($sql1);
             $total=$arr['total'];
+            $bid=$arr['booking_id'];
             while ($row1 = mysqli_fetch_assoc($res1))
             {
             ?>
@@ -48,12 +49,12 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
                             <div class="btn-group">
-                            <button type="button" class="btn btn-success" onclick="pay(<?php echo $total ?>)">
-                                        Buy Now <span class="fa fa-play"></span>
+                            <button type="button" class="btn btn-success" onclick="pay(<?php echo $total?>,<?php echo $bid?>)">
+                                        Pay Now <span class="fa fa-play"></span>
                                     </button>
             </div>
-                      <div class="btn-group">
-                      <a href="php/deletecar.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Cancel</a>
+            <div class="btn-group">
+                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
                         
                       </div></p>
 
@@ -82,7 +83,7 @@ $username = $_SESSION['email_id'];
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <script>
-    function pay(amt) {
+    function pay(amt,id) {
         <?php
             $sql = "select * from registration where email_id='$username'";
             $res = select_data($sql);
@@ -98,7 +99,7 @@ $username = $_SESSION['email_id'];
             "description": "Payment",
             
             //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "callback_url": "php/success.php?amt=" + amt,
+            "callback_url": "./php/success.php?amt=" + amt + "&id=" + id,
             "prefill": {
                 "name": "<?php echo $row['first_name'] . ' ' . $row['last_name'] ?>",
                 "email": "<?php echo $row['email_id'] ?>",

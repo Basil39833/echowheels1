@@ -14,12 +14,12 @@ include("header.php");
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Complaints</h1>
+      <h1>Feedbacks</h1>
       <nav>
       <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
-          <li class="breadcrumb-item">Complaints</li>
-          <li class="breadcrumb-item active">Replayed Complaints</li>
+          <li class="breadcrumb-item">Complaints & feedbacks</li>
+          <li class="breadcrumb-item active">Replayed feedbacks</li>
       </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -27,7 +27,7 @@ include("header.php");
     <div class="card"> 
           <div class="card-body"> 
             <h5 class="card-title"> 
-            Your Complaint List
+            Your Feedback List 
             </h5>
 
     <section class="section dashboard">
@@ -43,9 +43,9 @@ include("header.php");
                 <thead>
                   <tr>
                     <th scope="col">Slno.</th>
-                    <th scope="col">Title</th>
+                    
                     <th scope="col">Description</th>
-                    <th scope="col">Type</th>
+                   
                     <th scope="col">Date</th>
                     <th scope="col">Email</th>
                     <th scope="col">Reply</th>
@@ -55,7 +55,7 @@ include("header.php");
                 <tbody>
  
                 <?php 
-               $sql = "SELECT * FROM complaint where email_id='$username' ";
+               $sql = "SELECT * FROM feedback where email_id='$username' ";
 
 
                 $data=select_data($sql);
@@ -67,9 +67,9 @@ include("header.php");
                   ?>
                   <tr>
                  <th scope='row'><?php echo $n++; ?></th>
-                 <td><?php echo  $row['title'] ?></td>
+                 
                  <td> <?php echo $row['description'] ?></td>
-                 <td><?php echo $row['type'] ?></td>
+                 
                  <td><?php echo $row['date']?></td>
                  <td> <?php echo $row['email_id']  ?></td>
                  <td> <?php echo $row['message']  ?></td>

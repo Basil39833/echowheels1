@@ -449,7 +449,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Manage Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-card-list"></i><span>Complaints & Feedback</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -460,6 +460,16 @@ require("../connect.php");
           <li>
             <a href="viewedcomplaint.php">
               <i class="bi bi-circle"></i><span>Viewed Complaints</span>
+            </a>
+          </li>
+          <li>
+            <a href="feedbacks.php">
+              <i class="bi bi-circle"></i><span>Feedbacks</span>
+            </a>
+          </li>
+          <li>
+            <a href="viewedfeedbacks.php">
+              <i class="bi bi-circle"></i><span>viewedFeedback</span>
             </a>
           </li>
           <!--<li>
@@ -512,6 +522,14 @@ require("../connect.php");
           <span>ViewScooter</span>
         </a>
       </li><!-- End Error 404 Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href=./bookedscooter1.php>
+          <i class="bi bi-envelope"></i>
+          <span>Booked Scooters</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href=./complaint.php>

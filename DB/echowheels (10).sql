@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2023 at 12:05 PM
+-- Generation Time: Oct 14, 2023 at 11:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -38,7 +38,7 @@ CREATE TABLE `booking` (
   `user_email` varchar(70) NOT NULL,
   `pickup_station` varchar(70) NOT NULL,
   `drop_station` varchar(70) NOT NULL,
-  `booking_date` date NOT NULL,
+  `booking_date` datetime NOT NULL,
   `rent_hours` time NOT NULL,
   `total` varchar(50) NOT NULL,
   `payment` int(11) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scooter_color`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `rent_hours`, `total`, `payment`, `status`) VALUES
-(27, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'CUSAT', 'Pulinchodu', '2023-10-13', '05:00:00', '500', 0, 0);
+(43, 's1', 'Top', 'Mat', 11, '100', 'Benson', 'benson123@gmail.com', 'Kaloor', 'Palarivattom', '2023-10-14 09:43:23', '17:13:00', '1700', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -108,6 +108,28 @@ INSERT INTO `district` (`district_id`, `district_name`) VALUES
 (12, 'Pathanamthitta'),
 (13, 'Kollam'),
 (14, 'Thiruvananthapuram');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `feedback_id` int(50) NOT NULL,
+  `email_id` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
+  `date` date NOT NULL,
+  `reply` varchar(70) NOT NULL,
+  `message` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`feedback_id`, `email_id`, `description`, `date`, `reply`, `message`) VALUES
+(2, 'benson123@gmail.com', 'I had a nice experience while driving the scooter', '2023-10-14', '1', 'Thank you for your valuable feedback');
 
 -- --------------------------------------------------------
 
@@ -175,6 +197,26 @@ INSERT INTO `metrostations` (`metrostation_id`, `metrostation_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `payment_id` int(50) NOT NULL,
+  `booking_id` varchar(50) NOT NULL,
+  `amount` varchar(50) NOT NULL,
+  `paid_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`payment_id`, `booking_id`, `amount`, `paid_date`) VALUES
+(5, '41', '1400', '2023-10-14 09:41:37');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -197,7 +239,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
-(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '7', 'Well maintained', '100'),
+(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '5', 'Well maintained', '100'),
 (12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '7', 'well maintained', '100'),
 (13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '100');
 
@@ -251,6 +293,12 @@ ALTER TABLE `district`
   ADD PRIMARY KEY (`district_id`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`feedback_id`);
+
+--
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -261,6 +309,12 @@ ALTER TABLE `login`
 --
 ALTER TABLE `metrostations`
   ADD PRIMARY KEY (`metrostation_id`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`payment_id`);
 
 --
 -- Indexes for table `product`
@@ -282,13 +336,13 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -297,10 +351,22 @@ ALTER TABLE `district`
   MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `feedback_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `metrostations`
 --
 ALTER TABLE `metrostations`
   MODIFY `metrostation_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product`

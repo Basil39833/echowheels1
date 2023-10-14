@@ -6,28 +6,25 @@ include("header.php");
 
    
    $username = $_SESSION['email_id'];
-   $sql="select * from registration where email_id='$username'" ;
-   $res=select_data($sql);
-   $arr=mysqli_fetch_assoc($res);
 ?>
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Complaints</h1>
+      <h1>Pending Complaints</h1>
       <nav>
-      <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
-          <li class="breadcrumb-item">Complaints</li>
-          <li class="breadcrumb-item active">Replayed Complaints</li>
-      </ol>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
+          <li class="breadcrumb-item active">Complaints & Feedback</li>
+          <li class="breadcrumb-item active">feedbacks</li>
+        </ol>
       </nav>
     </div><!-- End Page Title -->
 
     <div class="card"> 
           <div class="card-body"> 
             <h5 class="card-title"> 
-            Your Complaint List
+            Users feedback list
             </h5>
 
     <section class="section dashboard">
@@ -43,37 +40,41 @@ include("header.php");
                 <thead>
                   <tr>
                     <th scope="col">Slno.</th>
-                    <th scope="col">Title</th>
+                   
                     <th scope="col">Description</th>
-                    <th scope="col">Type</th>
+                    
                     <th scope="col">Date</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Reply</th>
+                    <th scope="col">Action</th>
                 
                   </tr>
                 </thead>
                 <tbody>
  
                 <?php 
-               $sql = "SELECT * FROM complaint where email_id='$username' ";
+               $sql = "SELECT * FROM feedback where  reply='0' ";
 
 
                 $data=select_data($sql);
 
-                $n=1;
+                
 
                 while ($row = mysqli_fetch_assoc($data)) {
                   
                   ?>
                   <tr>
-                 <th scope='row'><?php echo $n++; ?></th>
-                 <td><?php echo  $row['title'] ?></td>
+                 <td><?php echo  $row['feedback_id'] ?></td>
+                 
                  <td> <?php echo $row['description'] ?></td>
-                 <td><?php echo $row['type'] ?></td>
+                 
                  <td><?php echo $row['date']?></td>
                  <td> <?php echo $row['email_id']  ?></td>
-                 <td> <?php echo $row['message']  ?></td>
-                 
+                 <td>
+                      <div class="btn-group">
+                      <a href="feedbackreply.php?id=<?php echo $row['feedback_id'] ?>" class="btn btn-success btn-sm">Reply</a>
+                        
+                      </div>
+                    </td>
                  
                   <?php
                   }
@@ -93,7 +94,8 @@ include("header.php");
   </main><!-- End #main -->
 
 
-    
+
+
 
 
       </div>
@@ -101,8 +103,11 @@ include("header.php");
 
   </main><!-- End #main -->
 
-<?php 
+  <?php
 
 
-require 'footer.html';
+
+
+include 'footer.html';
+
 ?>
