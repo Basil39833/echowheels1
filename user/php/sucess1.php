@@ -32,34 +32,12 @@
             /*$sql2 = "insert into pro_order (email_id,product_id,order_date,quantity,payment_id) values ('$email','$product_id','$date','$quantity','$pay_id')";
             insert($sql2);*/
 
-            $sql3 = "UPDATE booking SET status=1 WHERE booking_id='$product_id'";
-            update_data($sql3);
-            $sql4 = "UPDATE product SET stock=stock-1 WHERE product_id='$scooter_id'";
-            update_data($sql4);
         }
 
 
        /* $sql = "delete from cart where user='$email'";
         delete($sql);*/
-        $title = "Booking successfully";
 
-        $body = "
-        <html>
-        <body>
-        Hi,<br>
-        Your Booking from Garage4 has been placed successfully.
-        <br><br>".$orders."
-        <br><br>
-        Thank You<br>
-        Team Garage4
-        
-        </body>
-        </html>
-        ";
-
-      
-
-        send_mail($email, $title, $body);
 
 
     ?>
@@ -68,7 +46,7 @@
         icon: 'success',
         title: 'Booking Successfully!',
     }).then((result) => {
-        window.location.replace('../viewscooter.php');
+        window.location.replace('../extendedbooked.php');
     })
     </script>
     <?php

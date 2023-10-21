@@ -492,12 +492,21 @@ require("../connect.php");
      
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="bookedscooter.php">
-          <i class="bi bi-card-list"></i>
-          <span>Booked Scooter</span>
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>BookedScooters</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      </li><!-- End Register Page Nav -->
-
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="./bookedscooter.php">
+              <i class="bi bi-circle"></i><span>Bookedscooters</span>
+            </a>
+          </li>
+          <li>
+            <a href="./extendedbooked.php">
+              <i class="bi bi-circle"></i><span>Extended Booking</span>
+            </a>
+          </li>
+          </ul>
       <li class="nav-item dropdown">
 
 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">

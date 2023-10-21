@@ -23,18 +23,18 @@ $username = $_SESSION['email_id'];
         </ol>
       </nav>
     </div>
-
-            <?php
+    <?php
             
             $scooterid=$arr['scooter_id'];
             $sql1 = "select * from product where product_id=$scooterid";
             $res1 = select_data($sql1);
-            $total=$arr['total'];
+            $total=$arr['extend_total'];
             $bid=$arr['booking_id'];
             while ($row1 = mysqli_fetch_assoc($res1))
             {
             ?>
-                <div class="col-md-4" style="margin:0px;display: inline-block;">
+            
+            <div class="col-md-4" style="margin:0px;display: inline-block;">
                     <div class="card">
                         <img class="card-img-top" src="../admin/uploads/products/<?php echo $row1['image']; ?>" alt="Card image cap" style="height: 300px;">
                         <!--<div class="card-header">
@@ -44,9 +44,9 @@ $username = $_SESSION['email_id'];
                         <h5 class="card-title"><?php echo $arr['scooter_name']; ?></h5>
                             <p class="card-text"><b>Pickup Station:</b> <?php echo $arr['pickup_station']; ?></p>
                             <p class="card-text"><b>Drop Station:</b> <?php echo $arr['drop_station']; ?></p>
-                            <p class="card-text"><b>Rent Hour :</b> <?php echo (int)$arr['rent_hours']; ?></p>
+                            <p class="card-text"><b>Extended Hours :</b> <?php echo (int)$arr['extended_rent_hours']; ?></p>
                            
-                            <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
+                            <p class="card-text"><b>Total Rate:</b> <?php echo $arr['extend_total']; ?></p>
                             <p>
                             <div class="btn-group">
                             <button type="button" class="btn btn-success" onclick="pay(<?php echo $total?>,<?php echo $bid?>)">
@@ -99,7 +99,7 @@ $username = $_SESSION['email_id'];
             "description": "Payment",
             
             //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "callback_url": "./php/success.php?amt=" + amt + "&id=" + id,
+            "callback_url": "./php/sucess1.php?amt=" + amt + "&id=" + id,
             "prefill": {
                 "name": "<?php echo $row['first_name'] . ' ' . $row['last_name'] ?>",
                 "email": "<?php echo $row['email_id'] ?>",

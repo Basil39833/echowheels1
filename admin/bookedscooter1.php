@@ -4,11 +4,11 @@ include("header.php");
 
 $username = $_SESSION['email_id'];
 
-   $sql="select * from booking where user_email='$username'" ;
+   $sql="select * from booking where status=1" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);
 
-   $total=$arr['total'];
+   
    
 ?>
 
@@ -26,7 +26,7 @@ $username = $_SESSION['email_id'];
     </div>
 
     <?php
-            $sql="select * from booking where user_email='$username' && status=1" ;
+            $sql="select * from booking where status='1'" ;
             $res=select_data($sql);
             while($arr=mysqli_fetch_assoc($res)){
             
@@ -54,10 +54,7 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Drop station:</b> <?php echo $arr['drop_station']; ?></p>
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
-                            <div class="btn-group">
-                      <a href="./extendform.php?id=<?php echo $row1['product_id'] ?>" class="btn btn-success btn">Extend Rent</a>
-                        
-                      </div>
+                         
                       </p>
 
 

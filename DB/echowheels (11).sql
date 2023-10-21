@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2023 at 11:53 AM
+-- Generation Time: Oct 21, 2023 at 12:47 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,17 +40,20 @@ CREATE TABLE `booking` (
   `drop_station` varchar(70) NOT NULL,
   `booking_date` datetime NOT NULL,
   `rent_hours` time NOT NULL,
+  `extended_rent_hours` varchar(50) NOT NULL,
   `total` varchar(50) NOT NULL,
+  `extend_total` varchar(50) NOT NULL,
   `payment` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `status` int(11) NOT NULL,
+  `extended_status` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scooter_color`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `rent_hours`, `total`, `payment`, `status`) VALUES
-(43, 's1', 'Top', 'Mat', 11, '100', 'Benson', 'benson123@gmail.com', 'Kaloor', 'Palarivattom', '2023-10-14 09:43:23', '17:13:00', '1700', 0, 0);
+INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scooter_color`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `rent_hours`, `extended_rent_hours`, `total`, `extend_total`, `payment`, `status`, `extended_status`) VALUES
+(75, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'Aluva', 'Changampuzha Park', '2023-10-21 12:30:57', '08:00:00', '10:14', '800', '1000', 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -75,7 +78,7 @@ CREATE TABLE `complaint` (
 
 INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`, `message`) VALUES
 (18, 'scooter tyre', 'tyre have to be changed', 'scooter', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
-(19, 'service', 'scooter should be serviced', 'servive', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
+(19, 'service', 'scooter should be serviced', 'service', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
 (20, 'website', 'website should be more colour full', 'website', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it');
 
 -- --------------------------------------------------------
@@ -212,7 +215,8 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`payment_id`, `booking_id`, `amount`, `paid_date`) VALUES
-(5, '41', '1400', '2023-10-14 09:41:37');
+(18, '74', '500', '2023-10-21 12:28:50'),
+(19, '75', '800', '2023-10-21 12:31:40');
 
 -- --------------------------------------------------------
 
@@ -239,8 +243,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
-(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '5', 'Well maintained', '100'),
-(12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '7', 'well maintained', '100'),
+(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '0', 'Well maintained', '100'),
+(12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '4', 'well maintained', '100'),
 (13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '100');
 
 -- --------------------------------------------------------
@@ -268,7 +272,7 @@ CREATE TABLE `registration` (
 
 INSERT INTO `registration` (`first_name`, `last_name`, `contact`, `email_id`, `house_name`, `street_name`, `district_name`, `state_name`, `pincode`, `date_of_birth`) VALUES
 ('Basil', 'k reji', '6238813582', 'basilkreji14@gmail.com', 'kuruttampurathu', 'pampakuda', 'Ernakulam', 'kerala', 686667, '2022-03-24'),
-('Benson', 'k   reji', '7561866943', 'benson123@gmail.com', 'kuruttampurathu', 'pampakuda', 'Ernakulam', 'Kerala', 686667, '2023-09-06');
+('Benson', 'k reji', '7561866943', 'benson123@gmail.com', 'kuruttampurathu', 'pampakuda', 'Ernakulam', 'Kerala', 686667, '2023-09-06');
 
 --
 -- Indexes for dumped tables
@@ -336,7 +340,7 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `complaint`
@@ -366,7 +370,7 @@ ALTER TABLE `metrostations`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `product`
