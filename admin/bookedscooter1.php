@@ -1,6 +1,8 @@
 <?php
 session_start();
 include("header.php");
+/*$id = $_GET['id'];*/
+
 
 $username = $_SESSION['email_id'];
 
@@ -54,6 +56,10 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Drop station:</b> <?php echo $arr['drop_station']; ?></p>
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
+                            <div class="btn-group">
+                      <a href="sendcode.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-success btn">send Code </a>
+                        
+                      </div>
                          
                       </p>
 

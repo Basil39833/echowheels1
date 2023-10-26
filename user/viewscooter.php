@@ -25,7 +25,7 @@ include("header.php");
     </div>
 
             <?php
-            $sql = "select * from product";
+            $sql = "select * from product where stock>0";
             $res = select_data($sql);
             while ($row = mysqli_fetch_assoc($res)) {
             ?>

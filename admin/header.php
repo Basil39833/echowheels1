@@ -522,16 +522,24 @@ require("../connect.php");
           <span>ViewScooter</span>
         </a>
       </li><!-- End Error 404 Page Nav -->
-
       <li class="nav-item">
-        <a class="nav-link collapsed" href=./bookedscooter1.php>
-          <i class="bi bi-envelope"></i>
-          <span>Booked Scooters</span>
+        <a class="nav-link collapsed" data-bs-target="#tabs-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Booked Scooters</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      </li><!-- End Contact Page Nav -->
+        <ul id="tabs-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="./bookedscooter1.php">
+              <i class="bi bi-circle"></i><span>Bookedscooters</span>
+            </a>
+          </li>
+          <li>
+            <a href="./extendbookedscooter.php">
+              <i class="bi bi-circle"></i><span>extendedscooters</span>
+            </a>
+          </li>
+</ul>
 
-
-      <li class="nav-item">
+      <!--<li class="nav-item">
         <a class="nav-link collapsed" href=./complaint.php>
           <i class="bi bi-envelope"></i>
           <span>Notification</span>

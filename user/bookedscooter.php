@@ -19,6 +19,8 @@ $username = $_SESSION['email_id'];
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="">Bookedscooters</a></li>
+          <li class="breadcrumb-item"><a href="">Bookedscooter</a></li>
           <!--<li class="breadcrumb-item">Components</li>
           <li class="breadcrumb-item active">Cars</li>-->
         </ol>

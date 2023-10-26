@@ -11,6 +11,9 @@ $id=$_GET['id'];
    $sql1="select * from registration where email_id='$username'" ;
    $res1=select_data($sql1);
    $arr1=mysqli_fetch_assoc($res1);
+   $sql2="select * from booking where scooter_id='$id'" ;
+   $res2=select_data($sql2);
+   $arr2=mysqli_fetch_assoc($res2);
    ?>
 
 
@@ -45,13 +48,14 @@ $id=$_GET['id'];
               <h5 class="card-title">Enter Details Here</h5>
 
               <!-- General Form Elements -->
-              <form action="./php/extendbooking1.php?id=<?php echo $arr['product_id'] ?>" method="POST">
+              <form action="./php/extendbooking1.php?id=<?php echo $arr['product_id']?> & bid=<?php echo $arr2['booking_id'] ?>" method="POST">
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Name</label>
                   <div class="col-sm-10">
                   <input name="scootername" type="text" class="form-control" id="scootername" value=<?php echo $arr['scooter_name'];?>>
                   </div>
                 </div>
+
                 <!--<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Category</label>
                   <div class="col-sm-10">
@@ -85,59 +89,21 @@ $id=$_GET['id'];
                   </div>
                 </div>
 
-                <!--<div class="row mb-3">                
-                <label for="pickupstation" class="col-sm-2 col-form-label">Pickup Station</label>
-                <div class="col-sm-10">
-              <div class="form-control">
-							<span class="fa fa-map-marker" aria-hidden="true"></span>
-								<select class="form-input"  name="pickupstation">
-                                    <option selected disabled>Select Station </option>
-                                    <?php
-									
-                                    $sql = "select * from metrostations";
-                                    $result = select_data($sql);
-                                    if (mysqli_num_rows($result) > 0) {
-                                      while ($arr = mysqli_fetch_assoc($result)) {
-                                    ?>
-                                        <option value="<?php echo $arr['metrostation_name']; ?>">
-                                          <?php echo $arr['metrostation_name']; ?>
-                                        </option>
-                                    <?php
-                                      }
-                                    }
-                                    ?>
+                <div class="row mb-3">
+                  <label for="inputEmail" class="col-sm-2 col-form-label">Pickup Station</label>
+                  <div class="col-sm-10">
+                  <input name="pickupstation" type="text" class="form-control" id="pickupstation" value= <?php echo $arr2['pickup_station'];?>>
+                  </div>
+                </div>
 
-                    		</select>
-						</div>	
-            </div>
-                                  </div>
-
-            <div class="row mb-3">
-                <label for="dropstation" class="col-sm-2 col-form-label">Drop Station</label>
-                <div class="col-sm-10">
-              <div class="form-control">
-							<span class="fa fa-map-marker" aria-hidden="true"></span>
-								<select class="form-input"  name="dropstation">
-                                    <option selected disabled>Select Station </option>
-                                    <?php
-									
-                                    $sql = "select * from metrostations";
-                                    $result = select_data($sql);
-                                    if (mysqli_num_rows($result) > 0) {
-                                      while ($arr = mysqli_fetch_assoc($result)) {
-                                    ?>
-                                        <option value="<?php echo $arr['metrostation_name']; ?>">
-                                          <?php echo $arr['metrostation_name']; ?>
-                                        </option>
-                                    <?php
-                                      }
-                                    }
-                                    ?>
-
-                    		</select>
-						   </div>
-            </div>
-                                  </div>-->
+                
+            
+                <div class="row mb-3">
+                  <label for="inputEmail" class="col-sm-2 col-form-label">Drop Station</label>
+                  <div class="col-sm-10">
+                  <input name="dropstation" type="text" class="form-control" id="dropstation" value= <?php echo $arr2['drop_station'];?>>
+                  </div>
+                </div>
                                   <div class="row mb-3">
                   <label for="inputtime" class="col-sm-2 col-form-label">Extend Hours</label>
                   <div class="col-sm-10">

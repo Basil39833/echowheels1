@@ -4,11 +4,11 @@ include("header.php");
 
 $username = $_SESSION['email_id'];
 
-   $sql="select * from extendbooking where user_email='$username'" ;
+   /*$sql="select * from extendbooking where user_email='$username'" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);
 
-   $total=$arr['extend_total'];
+   $total=$arr['extend_total'];*/
    
 ?>
 
@@ -19,8 +19,6 @@ $username = $_SESSION['email_id'];
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
-          <li class="breadcrumb-item"><a href="">Bookedscooters</a></li>
-          <li class="breadcrumb-item"><a href="">Extendbooked</a></li>
           <!--<li class="breadcrumb-item">Components</li>
           <li class="breadcrumb-item active">Cars</li>-->
         </ol>
@@ -28,7 +26,7 @@ $username = $_SESSION['email_id'];
     </div>
 
     <?php
-            $sql="select * from extendbooking where user_email='$username' && status=1" ;
+            $sql="select * from extendbooking where status=1" ;
             $res=select_data($sql);
             while($arr=mysqli_fetch_assoc($res)){
             

@@ -8,6 +8,12 @@
 
 <body>                 
     <?php
+     use PHPMailer\PHPMailer\Exception;
+     use PHPMailer\PHPMailer\PHPMailer; 
+     
+     require '../../phpmailer/src/Exception.php';
+     require '../../phpmailer/src/PHPMailer.php';
+     require '../../phpmailer/src/SMTP.php';
     session_start();
     require('../../connect.php');
     if (isset($_GET['amt'])) {
@@ -17,12 +23,12 @@
         $date = date('Y-m-d H:i:s');
 
 
-        $sql = "insert into payment (booking_id,amount,paid_date) values ('$bid','$amt','$date')";
+        $sql = "insert into extendpayment (extendbooking_id,extend_amount,paid_date) values ('$bid','$amt','$date')";
         insert_data($sql);
 
         $pay_id = mysqli_insert_id($conn);
 
-        $sql = "select * from booking where booking_id='$bid'";
+        $sql = "select * from extendbooking where extend_id='$bid'";
         $res = select_data($sql);
 
         while ($row = mysqli_fetch_assoc($res)) {
@@ -31,8 +37,38 @@
             /*$quantity = $row['quantity'];*/
             /*$sql2 = "insert into pro_order (email_id,product_id,order_date,quantity,payment_id) values ('$email','$product_id','$date','$quantity','$pay_id')";
             insert($sql2);*/
-
+            $sql3 = "UPDATE extendbooking SET status=1 WHERE booking_id='$product_id'";
+            update_data($sql3);
+            
         }
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'echowheels7@gmail.com';
+        $mail->Password = 'ejbfqdrplwzqysuu';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+        $mail->setFrom($email);
+    
+        $mail->addAddress($email);
+        $mail->isHTML(true);
+        $mail->Subject = "Booking Successfull";
+        $mail->Body = "
+        <html>
+        <body>
+        Hi,<br>
+        Your Extendbooking from EchoWheels has been placed successfully. Please find the order ids below.
+        <br><br>
+        <br><br>
+        Thank You<br>
+        Team EchoWheels
+        
+        </body>
+        </html>
+        ";
+    
+        $mail->send();
 
 
        /* $sql = "delete from cart where user='$email'";
@@ -44,7 +80,7 @@
     <script>
     Swal.fire({
         icon: 'success',
-        title: 'Booking Successfully!',
+        title: 'Booking Successfull!',
     }).then((result) => {
         window.location.replace('../extendedbooked.php');
     })

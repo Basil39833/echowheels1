@@ -3,11 +3,11 @@ session_start();
 include("header.php");
 
 $username = $_SESSION['email_id'];
-   $sql="select * from booking where user_email='$username'" ;
+   $sql="select * from extendbooking where user_email='$username'" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);
 
-   $total=$arr['total'];
+   $total=$arr['extend_total'];
    
 ?>
 
@@ -18,6 +18,7 @@ $username = $_SESSION['email_id'];
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="">Extendedbooking</a></li>
           <!--<li class="breadcrumb-item">Components</li>
           <li class="breadcrumb-item active">Cars</li>-->
         </ol>
@@ -29,7 +30,7 @@ $username = $_SESSION['email_id'];
             $sql1 = "select * from product where product_id=$scooterid";
             $res1 = select_data($sql1);
             $total=$arr['extend_total'];
-            $bid=$arr['booking_id'];
+            $bid=$arr['extend_id'];
             while ($row1 = mysqli_fetch_assoc($res1))
             {
             ?>
@@ -44,7 +45,7 @@ $username = $_SESSION['email_id'];
                         <h5 class="card-title"><?php echo $arr['scooter_name']; ?></h5>
                             <p class="card-text"><b>Pickup Station:</b> <?php echo $arr['pickup_station']; ?></p>
                             <p class="card-text"><b>Drop Station:</b> <?php echo $arr['drop_station']; ?></p>
-                            <p class="card-text"><b>Extended Hours :</b> <?php echo (int)$arr['extended_rent_hours']; ?></p>
+                            <p class="card-text"><b>Extended Hours :</b> <?php echo (int)$arr['extend_rent_hour']; ?></p>
                            
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['extend_total']; ?></p>
                             <p>
@@ -53,10 +54,10 @@ $username = $_SESSION['email_id'];
                                         Pay Now <span class="fa fa-play"></span>
                                     </button>
             </div>
-            <div class="btn-group">
-                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
+            <!--<div class="btn-group">
+                      <a href="php/extendcancel.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
                         
-                      </div></p>
+                      </div>--></p>
 
 
                         </div>

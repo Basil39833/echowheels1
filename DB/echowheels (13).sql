@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2023 at 12:47 PM
+-- Generation Time: Oct 26, 2023 at 12:25 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,20 +40,19 @@ CREATE TABLE `booking` (
   `drop_station` varchar(70) NOT NULL,
   `booking_date` datetime NOT NULL,
   `rent_hours` time NOT NULL,
-  `extended_rent_hours` varchar(50) NOT NULL,
   `total` varchar(50) NOT NULL,
-  `extend_total` varchar(50) NOT NULL,
   `payment` int(11) NOT NULL,
   `status` int(11) NOT NULL,
-  `extended_status` int(50) NOT NULL
+  `code` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scooter_color`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `rent_hours`, `extended_rent_hours`, `total`, `extend_total`, `payment`, `status`, `extended_status`) VALUES
-(75, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'Aluva', 'Changampuzha Park', '2023-10-21 12:30:57', '08:00:00', '10:14', '800', '1000', 0, 1, 0);
+INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scooter_color`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `rent_hours`, `total`, `payment`, `status`, `code`) VALUES
+(82, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'Pulinchodu', 'Kaloor', '2023-10-26 12:15:21', '07:45:00', '700', 0, 1, ''),
+(84, '450X', 'Normal', 'Red', 13, '100', 'Basil', 'basilkreji14@gmail.com', 'Pulinchodu', 'Palarivattom', '2023-10-26 12:23:08', '10:53:00', '1000', 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -79,7 +78,8 @@ CREATE TABLE `complaint` (
 INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`, `message`) VALUES
 (18, 'scooter tyre', 'tyre have to be changed', 'scooter', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
 (19, 'service', 'scooter should be serviced', 'service', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
-(20, 'website', 'website should be more colour full', 'website', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it');
+(20, 'website', 'website should be more colour full', 'website', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
+(22, 'scooter tyre', 'tyre have to be changed', 'scooter', '2023-10-26', 'basilkreji14@gmail.com', '1', 'we will work on it');
 
 -- --------------------------------------------------------
 
@@ -115,6 +115,58 @@ INSERT INTO `district` (`district_id`, `district_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `extendbooking`
+--
+
+CREATE TABLE `extendbooking` (
+  `extend_id` int(50) NOT NULL,
+  `booking_id` int(50) NOT NULL,
+  `scooter_name` varchar(50) NOT NULL,
+  `scooter_id` varchar(50) NOT NULL,
+  `scooter_rate` varchar(50) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `user_email` varchar(50) NOT NULL,
+  `pickup_station` varchar(50) NOT NULL,
+  `drop_station` varchar(50) NOT NULL,
+  `booking_date` datetime NOT NULL,
+  `extend_rent_hour` time NOT NULL,
+  `extend_total` varchar(50) NOT NULL,
+  `extend_payment` int(11) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `extendbooking`
+--
+
+INSERT INTO `extendbooking` (`extend_id`, `booking_id`, `scooter_name`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `extend_rent_hour`, `extend_total`, `extend_payment`, `status`) VALUES
+(29, 82, 's1ProGen2', '12 ', '100', 'Benson', 'benson123@gmail.com', 'Pulinchodu', 'Kaloor', '2023-10-26 12:16:40', '03:46:00', '300', 0, 1),
+(31, 84, '450X', '13 ', '100', 'Basil', 'basilkreji14@gmail.com', 'Pulinchodu', 'Palarivattom', '2023-10-26 12:23:57', '04:53:00', '400', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extendpayment`
+--
+
+CREATE TABLE `extendpayment` (
+  `extendpayment_id` int(50) NOT NULL,
+  `extendbooking_id` int(50) NOT NULL,
+  `extend_amount` int(50) NOT NULL,
+  `paid_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `extendpayment`
+--
+
+INSERT INTO `extendpayment` (`extendpayment_id`, `extendbooking_id`, `extend_amount`, `paid_date`) VALUES
+(10, 29, 300, '2023-10-26 12:17:13'),
+(12, 31, 400, '2023-10-26 12:24:32');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `feedback`
 --
 
@@ -132,7 +184,8 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`feedback_id`, `email_id`, `description`, `date`, `reply`, `message`) VALUES
-(2, 'benson123@gmail.com', 'I had a nice experience while driving the scooter', '2023-10-14', '1', 'Thank you for your valuable feedback');
+(2, 'benson123@gmail.com', 'I had a nice experience while driving the scooter', '2023-10-14', '1', 'Thank you for your valuable feedback'),
+(3, 'basilkreji14@gmail.com', 'nice experience ', '2023-10-26', '1', 'thank you');
 
 -- --------------------------------------------------------
 
@@ -215,8 +268,8 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`payment_id`, `booking_id`, `amount`, `paid_date`) VALUES
-(18, '74', '500', '2023-10-21 12:28:50'),
-(19, '75', '800', '2023-10-21 12:31:40');
+(26, '82', '700', '2023-10-26 12:15:58'),
+(28, '84', '1000', '2023-10-26 12:23:41');
 
 -- --------------------------------------------------------
 
@@ -244,8 +297,8 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
 (11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '0', 'Well maintained', '100'),
-(12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '4', 'well maintained', '100'),
-(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '100');
+(12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '2', 'well maintained', '100'),
+(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '3', 'well maintained', '100');
 
 -- --------------------------------------------------------
 
@@ -297,6 +350,18 @@ ALTER TABLE `district`
   ADD PRIMARY KEY (`district_id`);
 
 --
+-- Indexes for table `extendbooking`
+--
+ALTER TABLE `extendbooking`
+  ADD PRIMARY KEY (`extend_id`);
+
+--
+-- Indexes for table `extendpayment`
+--
+ALTER TABLE `extendpayment`
+  ADD PRIMARY KEY (`extendpayment_id`);
+
+--
 -- Indexes for table `feedback`
 --
 ALTER TABLE `feedback`
@@ -340,13 +405,13 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -355,10 +420,22 @@ ALTER TABLE `district`
   MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `extendbooking`
+--
+ALTER TABLE `extendbooking`
+  MODIFY `extend_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `extendpayment`
+--
+ALTER TABLE `extendpayment`
+  MODIFY `extendpayment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `feedback_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `feedback_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `metrostations`
@@ -370,7 +447,7 @@ ALTER TABLE `metrostations`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `product`
