@@ -54,6 +54,7 @@ $username = $_SESSION['email_id'];
                         <p class="card-text"><b>User Email:</b> <?php echo $arr['user_email']; ?></p>
                         <p class="card-text"><b>Pickup station:</b> <?php echo $arr['pickup_station']; ?></p>
                             <p class="card-text"><b>Drop station:</b> <?php echo $arr['drop_station']; ?></p>
+                            <p class="card-text"><b>Extended Hour:</b> <?php echo (int)$arr['extend_rent_hour']; ?></p>
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['extend_total']; ?></p>
                             </p>
                             </div>

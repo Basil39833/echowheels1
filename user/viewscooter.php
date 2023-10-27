@@ -14,12 +14,12 @@ include("header.php");
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Scooter</h1>
+      <h1>Booking</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
-          <!--<li class="breadcrumb-item">Components</li>
-          <li class="breadcrumb-item active">Cars</li>-->
+          <li class="breadcrumb-item">Scooters</li>
+          <!--<li class="breadcrumb-item active">Cars</li>-->
         </ol>
       </nav>
     </div>

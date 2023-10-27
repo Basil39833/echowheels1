@@ -493,12 +493,12 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>BookedScooters</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Booked Scooters</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="./bookedscooter.php">
-              <i class="bi bi-circle"></i><span>Bookedscooters</span>
+              <i class="bi bi-circle"></i><span>Booked scooter</span>
             </a>
           </li>
           <li>
@@ -538,7 +538,7 @@ require("../connect.php");
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="./complaint.php">
-              <i class="bi bi-circle"></i><span>Create Complaints</span>
+              <i class="bi bi-circle"></i><span>Create Complaint</span>
             </a>
           </li>
           <li>

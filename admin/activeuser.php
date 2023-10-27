@@ -12,7 +12,7 @@ include("header.php");
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Active Users</h1>
+    <h1>Users</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>

@@ -11,12 +11,12 @@ include("header.php");
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Pending Complaints</h1>
+      <h1>Complaints & Feedbacks</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
           <li class="breadcrumb-item active">Complaints & Feedback</li>
-          <li class="breadcrumb-item active">feedbacks</li>
+          <li class="breadcrumb-item active">Feedbacks</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

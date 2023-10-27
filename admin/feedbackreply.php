@@ -6,12 +6,12 @@ $id = $_GET['id'];
  <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Complaints</h1>
+  <h1>Complaints & Feedbacks</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
       <li class="breadcrumb-item">Complaints & Feedbacks</a></li>
-      <li class="breadcrumb-item">feedbacks</a></li>
+      <li class="breadcrumb-item">Feedbacks</a></li>
       <li class="breadcrumb-item active">Reply</li>
     </ol>
   </nav>

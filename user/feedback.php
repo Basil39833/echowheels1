@@ -18,12 +18,12 @@ include("header.php");
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Feedbacks</h1>
+    <h1>Complaints & Feedbacks</h1>
     <nav>
       <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
-          
-          <li class="breadcrumb-item active">Feedback</li>
+      <li class="breadcrumb-item active">Complaints & Feedbacks</li>
+          <li class="breadcrumb-item active">Create Feedback</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->

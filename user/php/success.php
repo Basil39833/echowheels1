@@ -77,7 +77,7 @@
     <script>
     Swal.fire({
         icon: 'success',
-        title: 'Booking Successfully!',
+        title: 'Booking Successfull!',
     }).then((result) => {
         window.location.replace('../bookedscooter.php');
     })

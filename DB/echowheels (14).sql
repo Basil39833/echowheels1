@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2023 at 12:25 PM
+-- Generation Time: Oct 27, 2023 at 12:18 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,8 +51,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scooter_color`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `rent_hours`, `total`, `payment`, `status`, `code`) VALUES
-(82, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'Pulinchodu', 'Kaloor', '2023-10-26 12:15:21', '07:45:00', '700', 0, 1, ''),
-(84, '450X', 'Normal', 'Red', 13, '100', 'Basil', 'basilkreji14@gmail.com', 'Pulinchodu', 'Palarivattom', '2023-10-26 12:23:08', '10:53:00', '1000', 0, 1, '');
+(84, '450X', 'Normal', 'Red', 13, '100', 'Basil', 'basilkreji14@gmail.com', 'Pulinchodu', 'Palarivattom', '2023-10-26 12:23:08', '10:53:00', '1000', 0, 1, '4567'),
+(87, '450X', 'Normal', 'Red', 13, '100', 'Benson', 'benson123@gmail.com', 'Companypady', 'JLN Stadium', '2023-10-27 07:38:39', '02:08:00', '200', 0, 1, '7890');
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,8 @@ INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`,
 (18, 'scooter tyre', 'tyre have to be changed', 'scooter', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
 (19, 'service', 'scooter should be serviced', 'service', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
 (20, 'website', 'website should be more colour full', 'website', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
-(22, 'scooter tyre', 'tyre have to be changed', 'scooter', '2023-10-26', 'basilkreji14@gmail.com', '1', 'we will work on it');
+(22, 'scooter tyre', 'tyre have to be changed', 'scooter', '2023-10-26', 'basilkreji14@gmail.com', '1', 'we will work on it'),
+(23, 'website', 'website is to slow', 'website', '2023-10-27', 'basilkreji14@gmail.com', '0', '');
 
 -- --------------------------------------------------------
 
@@ -140,8 +141,8 @@ CREATE TABLE `extendbooking` (
 --
 
 INSERT INTO `extendbooking` (`extend_id`, `booking_id`, `scooter_name`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `extend_rent_hour`, `extend_total`, `extend_payment`, `status`) VALUES
-(29, 82, 's1ProGen2', '12 ', '100', 'Benson', 'benson123@gmail.com', 'Pulinchodu', 'Kaloor', '2023-10-26 12:16:40', '03:46:00', '300', 0, 1),
-(31, 84, '450X', '13 ', '100', 'Basil', 'basilkreji14@gmail.com', 'Pulinchodu', 'Palarivattom', '2023-10-26 12:23:57', '04:53:00', '400', 0, 1);
+(31, 84, '450X', '13 ', '100', 'Basil', 'basilkreji14@gmail.com', 'Pulinchodu', 'Palarivattom', '2023-10-26 12:23:57', '04:53:00', '400', 0, 1),
+(32, 84, '450X', '13 ', '100', 'Benson', 'benson123@gmail.com', 'Pulinchodu', 'Palarivattom', '2023-10-27 07:39:43', '03:09:00', '300', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -161,8 +162,8 @@ CREATE TABLE `extendpayment` (
 --
 
 INSERT INTO `extendpayment` (`extendpayment_id`, `extendbooking_id`, `extend_amount`, `paid_date`) VALUES
-(10, 29, 300, '2023-10-26 12:17:13'),
-(12, 31, 400, '2023-10-26 12:24:32');
+(12, 31, 400, '2023-10-26 12:24:32'),
+(13, 32, 300, '2023-10-27 07:40:37');
 
 -- --------------------------------------------------------
 
@@ -185,7 +186,8 @@ CREATE TABLE `feedback` (
 
 INSERT INTO `feedback` (`feedback_id`, `email_id`, `description`, `date`, `reply`, `message`) VALUES
 (2, 'benson123@gmail.com', 'I had a nice experience while driving the scooter', '2023-10-14', '1', 'Thank you for your valuable feedback'),
-(3, 'basilkreji14@gmail.com', 'nice experience ', '2023-10-26', '1', 'thank you');
+(3, 'basilkreji14@gmail.com', 'nice experience ', '2023-10-26', '1', 'thank you'),
+(4, 'basilkreji14@gmail.com', 'nice services', '2023-10-27', '0', '');
 
 -- --------------------------------------------------------
 
@@ -253,6 +255,27 @@ INSERT INTO `metrostations` (`metrostation_id`, `metrostation_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `otp`
+--
+
+CREATE TABLE `otp` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `otp` varchar(50) NOT NULL,
+  `expiry` varchar(50) NOT NULL,
+  `sendtime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `otp`
+--
+
+INSERT INTO `otp` (`id`, `email`, `otp`, `expiry`, `sendtime`) VALUES
+(0, 'basilkreji14@gmail.com', '660301', '2023-10-27 12:29:31', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payment`
 --
 
@@ -268,8 +291,8 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`payment_id`, `booking_id`, `amount`, `paid_date`) VALUES
-(26, '82', '700', '2023-10-26 12:15:58'),
-(28, '84', '1000', '2023-10-26 12:23:41');
+(28, '84', '1000', '2023-10-26 12:23:41'),
+(29, '87', '200', '2023-10-27 07:39:17');
 
 -- --------------------------------------------------------
 
@@ -296,9 +319,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
-(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '0', 'Well maintained', '100'),
+(11, 's1proimage.jpeg', 's1 pro', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '2', 'Well maintained', '100'),
 (12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '2', 'well maintained', '100'),
-(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '3', 'well maintained', '100');
+(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '2', 'well maintained', '100');
 
 -- --------------------------------------------------------
 
@@ -405,13 +428,13 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -423,19 +446,19 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `extendbooking`
 --
 ALTER TABLE `extendbooking`
-  MODIFY `extend_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `extend_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `extendpayment`
 --
 ALTER TABLE `extendpayment`
-  MODIFY `extendpayment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `extendpayment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `feedback_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `feedback_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `metrostations`
@@ -447,7 +470,7 @@ ALTER TABLE `metrostations`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `product`

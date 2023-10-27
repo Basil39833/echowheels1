@@ -37,7 +37,7 @@ require("../connect.php");
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/styleeee.css" rel="stylesheet">
+  <link href="assets/css/styleeeee.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -449,7 +449,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Complaints & Feedback</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-card-list"></i><span>Complaints & Feedbacks</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -498,12 +498,12 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Scooters</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="./addscooter.php">
-              <i class="bi bi-circle"></i><span>Add products</span>
+              <i class="bi bi-circle"></i><span>Add Scooters</span>
             </a>
           </li>
 </ul>
@@ -529,12 +529,12 @@ require("../connect.php");
         <ul id="tabs-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="./bookedscooter1.php">
-              <i class="bi bi-circle"></i><span>Bookedscooters</span>
+              <i class="bi bi-circle"></i><span>Booked Scooters</span>
             </a>
           </li>
           <li>
             <a href="./extendbookedscooter.php">
-              <i class="bi bi-circle"></i><span>extendedscooters</span>
+              <i class="bi bi-circle"></i><span>Extended Scooters</span>
             </a>
           </li>
 </ul>

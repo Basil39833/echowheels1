@@ -17,12 +17,12 @@ $username = $_SESSION['email_id'];
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Scooter</h1>
+      <h1>Booked Scooters</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
-          <!--<li class="breadcrumb-item">Components</li>
-          <li class="breadcrumb-item active">Cars</li>-->
+          <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
+          <li class="breadcrumb-item">Booked Scooters</li>
+          <li class="breadcrumb-item active">Booked Scooter</li>
         </ol>
       </nav>
     </div>
@@ -51,9 +51,12 @@ $username = $_SESSION['email_id'];
                         <div class="card-body">
                         <h5 class="card-title"><?php echo $arr['scooter_name']; ?></h5>
                             <p class="card-text"><b>scooter Category:</b> <?php echo $arr['scooter_category']; ?></p>
+                            <p class="card-text"><b>Scooter Color:</b> <?php echo $arr['scooter_color']; ?></p>
+                            <p class="card-text"><b>Booking Date & Time:</b> <?php echo $arr['booking_date']; ?></p>
                             <p class="card-text"><b>User Email:</b> <?php echo $arr['user_email']; ?></p>
                             <p class="card-text"><b>Pickup station:</b> <?php echo $arr['pickup_station']; ?></p>
                             <p class="card-text"><b>Drop station:</b> <?php echo $arr['drop_station']; ?></p>
+                            <p class="card-text"><b>Rent Hours:</b> <?php echo (int)$arr['rent_hours']; ?></p>
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
                             <div class="btn-group">

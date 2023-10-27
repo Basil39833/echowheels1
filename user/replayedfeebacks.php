@@ -14,7 +14,7 @@ include("header.php");
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Feedbacks</h1>
+      <h1>Complaints & Feedbacks</h1>
       <nav>
       <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
