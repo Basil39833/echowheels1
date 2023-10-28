@@ -4,16 +4,18 @@ include("header.php");
 
 
 $id=$_GET['id'];
-   $sql="select * from product where product_id='$id'" ;
-   $res=select_data($sql);
-   $arr=mysqli_fetch_assoc($res);
+  
    $username = $_SESSION['email_id'];
    $sql1="select * from registration where email_id='$username'" ;
    $res1=select_data($sql1);
    $arr1=mysqli_fetch_assoc($res1);
-   $sql2="select * from booking where scooter_id='$id'" ;
+   $sql2="select * from booking where booking_id='$id'" ;
    $res2=select_data($sql2);
    $arr2=mysqli_fetch_assoc($res2);
+   $pid=$arr2['scooter_id'];
+   $sql="select * from product where product_id='$pid'" ;
+   $res=select_data($sql);
+   $arr=mysqli_fetch_assoc($res);
    ?>
 
 

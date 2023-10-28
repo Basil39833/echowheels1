@@ -60,7 +60,7 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
                             <div class="btn-group">
-                      <a href="sendcode.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-success btn">send Code </a>
+                      <a href="./sendcode/sendmail.php?id=<?php echo $arr['booking_id']?> & email=<?php echo $arr['user_email'] ?>" class="btn btn-success btn">send Code </a>
                         
                       </div>
                          

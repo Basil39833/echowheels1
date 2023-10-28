@@ -56,7 +56,12 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Drop station:</b> <?php echo $arr['drop_station']; ?></p>
                             <p class="card-text"><b>Extended Hour:</b> <?php echo (int)$arr['extend_rent_hour']; ?></p>
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['extend_total']; ?></p>
+                            <div class="btn-group">
+                      <a href="./extendreceipt.php?id=<?php echo $arr['extend_id'] ?>" class="btn btn-danger btn">View Receipt</a>
+                        
+                      </div>
                             </p>
+                          
                             </div>
                         <!--<div class="card-footer text-muted">
 

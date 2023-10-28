@@ -53,12 +53,18 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>scooter Category:</b> <?php echo $arr['scooter_category']; ?></p>
                             <p class="card-text"><b>User Email:</b> <?php echo $arr['user_email']; ?></p>
                             <p class="card-text"><b>Pickup station:</b> <?php echo $arr['pickup_station']; ?></p>
-                            <p class="card-text"><b>Rent Hours:</b> <?php echo (int) $arr['rent_hours']; ?></p>
                             <p class="card-text"><b>Drop station:</b> <?php echo $arr['drop_station']; ?></p>
+                            <p class="card-text"><b>Rent Hours:</b> <?php echo (int) $arr['rent_hours']; ?></p>
+                            
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
                             <div class="btn-group">
-                      <a href="./extendform.php?id=<?php echo $row1['product_id'] ?>" class="btn btn-success btn">Extend Rent</a>
+                      <a href="./extendform.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-success btn">Extend Rent</a>
+                      </div>
+            <div class="btn-group">
+                      <a href="./receipt.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">View Receipt</a>
+                        
+                      </div>
                         
                       </div>
                       </p>
