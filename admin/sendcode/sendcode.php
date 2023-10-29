@@ -29,8 +29,8 @@ $expiry = date("Y-m-d H:i:s", strtotime("+15 minutes"));
 
     $mail->addAddress($email);
     $mail->isHTML(true);
-    $mail->Subject = "OTP verfication";
-    $mail->Body = "Your OTP is :".$otp;
+    $mail->Subject = "Personal code";
+    $mail->Body = "Your Personal Code:".$otp;
 
     $mail->send();
       ?>
