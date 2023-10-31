@@ -557,6 +557,26 @@ require("../connect.php");
             </a>
           </li>
           <li>
+</ul>
+
+
+<li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#history-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>History</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="history-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="./history.php">
+              <i class="bi bi-circle"></i><span>Normal History</span>
+            </a>
+          </li>
+          <li>
+            <a href="./extendedhistory.php">
+              <i class="bi bi-circle"></i><span>Extended History</span>
+            </a>
+          </li>
+          </ul>
+      
 
       <!--<li class="nav-item">
         <a class="nav-link collapsed" href="pages-blank.html">
@@ -564,6 +584,7 @@ require("../connect.php");
           <span>Blank</span>
         </a>
       </li><!-- End Blank Page Nav -->
+      
 
     </ul>
 

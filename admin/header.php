@@ -538,6 +538,11 @@ require("../connect.php");
             </a>
           </li>
 </ul>
+<li class="nav-item">
+        <a class="nav-link collapsed" href="./adminhistory.php">
+        <i class="bi bi-card-list"></i>
+          <span>Booking History</span>
+        </a>
 
       <!--<li class="nav-item">
         <a class="nav-link collapsed" href=./complaint.php>

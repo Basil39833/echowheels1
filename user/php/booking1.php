@@ -22,7 +22,7 @@ if(isset($_POST["submit"])){
     $email=$_POST['useremail'];
     $pickupstation=$_POST['pickupstation'];
     $dropstation=$_POST['dropstation'];
-    $bdate = date('Y-m-d H:i:s'); 
+    $bdate = $_POST['rentdate'];
     $hour=$_POST['renthours'];
     $total=$rate*(int)$hour;
     echo $total;

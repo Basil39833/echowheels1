@@ -61,7 +61,11 @@ $username = $_SESSION['email_id'];
                             <p>
                             <div class="btn-group">
                       <a href="./sendcode/sendmail.php?id=<?php echo $arr['booking_id']?> & email=<?php echo $arr['user_email'] ?>" class="btn btn-success btn">send Code </a>
+                            </div>
+                      <div class="btn-group">
+                      <a href="php/remove.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Remove</a>
                         
+                      </div>
                       </div>
                          
                       </p>

@@ -56,6 +56,11 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Rent Hours:</b> <?php echo (int)$arr['extend_rent_hour']; ?></p>
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['extend_total']; ?></p>
                             </p>
+                            <div class="btn-group">
+                      <a href="php/extendremove.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Remove</a>
+                        
+                      </div>
+                            
                             </div>
                         <!--<div class="card-footer text-muted">
 
