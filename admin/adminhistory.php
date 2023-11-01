@@ -24,7 +24,7 @@ include("header.php");
     <div class="card"> 
           <div class="card-body"> 
             <h5 class="card-title"> 
-            Booking History
+            Normal Booking History
             </h5>
 
     <section class="section dashboard">
@@ -40,8 +40,9 @@ include("header.php");
                 <thead>
                   <tr>
                     <th scope="col">Slno.</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Scooter Name</th>
-                    <th scope="col">Booked Date & Time</th>
+                    <th scope="col">Booked Date</th>
                     <th scope="col">pickup Station</th>
                     <th scope="col">drop Station</th>
                     <th scope="col">Total Hours</th>
@@ -67,6 +68,7 @@ include("header.php");
                   ?>
                   <tr>
                   <th scope='row'><?php echo $n++; ?></th>
+                  <td><?php echo  $row['user_email'] ?></td>
                  <td><?php echo  $row['scooter_name'] ?></td>
                  <td> <?php echo $row['booking_date'] ?></td>
                  <td><?php echo $row['pickup_station'] ?></td>
@@ -86,12 +88,21 @@ include("header.php");
                  
                 </tbody>
               </table>
+
+              
+    <div class="card"> 
+          <div class="card-body"> 
+            <h5 class="card-title"> 
+            Extended Booking History
+            </h5>
+
               <table class="table datatable">
                 <thead>
                   <tr>
                     <th scope="col">Slno.</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Scooter Name</th>
-                    <th scope="col">Booked Date & Time</th>
+                    <th scope="col">Booked Date</th>
                     <th scope="col">pickup Station</th>
                     <th scope="col">drop Station</th>
                     
@@ -117,6 +128,7 @@ include("header.php");
                   ?>
                   <tr>
                   <th scope='row'><?php echo $n++; ?></th>
+                  <td><?php echo  $row['user_email'] ?></td>
                  <td><?php echo  $row['scooter_name'] ?></td>
                  <td> <?php echo $row['booking_date'] ?></td>
                  <td><?php echo $row['pickup_station'] ?></td>

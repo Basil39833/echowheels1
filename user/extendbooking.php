@@ -3,7 +3,7 @@ session_start();
 include("header.php");
 
 $username = $_SESSION['email_id'];
-   $sql="select * from extendbooking where user_email='$username'" ;
+   $sql="select * from extendbooking where user_email='$username' && status='0'" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);
 
@@ -43,6 +43,7 @@ $username = $_SESSION['email_id'];
                         </div>-->
                         <div class="card-body">
                         <h5 class="card-title"><?php echo $arr['scooter_name']; ?></h5>
+                        <p class="card-text"><b>Booked Date:</b> <?php echo $arr['booking_date']; ?></p>
                             <p class="card-text"><b>Pickup Station:</b> <?php echo $arr['pickup_station']; ?></p>
                             <p class="card-text"><b>Drop Station:</b> <?php echo $arr['drop_station']; ?></p>
                             <p class="card-text"><b>Extended Hours :</b> <?php echo (int)$arr['extend_rent_hour']; ?></p>

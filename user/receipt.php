@@ -264,7 +264,7 @@ $arr1=mysqli_fetch_assoc($res1);
                         <th>TOTAL RATE</th>
                         <th>PICKUP STATION</th>
                         <th>DROP STATION</th>
-                        <th>BOOKING DATE & TIME</th>
+                        <th>BOOKED DATE</th>
                         <th>TOTAL HOURS</th>
                        <!-- <th class="text-center" width="10%">HOURS</th>
                         <th class="text-right" width="20%">LINE TOTAL</th>-->
