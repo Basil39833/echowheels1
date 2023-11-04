@@ -144,13 +144,13 @@ include("header.php");
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fname" type="text" class="form-control" id="fname" value=<?php echo $arr['first_name'];?>>
+                        <input name="fname" type="text" class="form-control" id="fname" value='<?php echo $arr['first_name'];?>'>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="lname" type="text" class="form-control" id="lname" value=<?php echo $arr['last_name'];?>>
+                        <input name="lname" type="text" class="form-control" id="lname" value='<?php echo $arr['last_name'];?>'>
                       </div>
                     </div>
                     
