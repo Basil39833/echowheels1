@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2023 at 05:47 PM
+-- Generation Time: Nov 04, 2023 at 10:15 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -53,7 +53,8 @@ INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scoote
 (97, 's1', 'Top', 'Mat', 11, '100', 'Benson', 'benson123@gmail.com', 'Aluva', 'Pettah', '2023-10-28', '10:02:00', '1000', 0, 2),
 (98, 's1ProGen2', 'Top', 'Black', 12, '100', 'Basil', 'basilshajan555@gmail.com', 'Aluva', 'Town Hall', '2023-10-30', '03:14:00', '300', 0, 2),
 (104, '450X', 'Normal', 'Red', 13, '100', 'Benson', 'benson123@gmail.com', 'Palarivattom', 'Town Hall', '2023-11-16', '07:25:00', '700', 0, 1),
-(105, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'Changampuzha Park', 'MG Road', '2023-10-31', '09:32:00', '900', 0, 2);
+(105, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'Changampuzha Park', 'MG Road', '2023-10-31', '09:32:00', '900', 0, 2),
+(110, '450X', 'Normal', 'Red', 13, '80', 'Benson', 'benson123@gmail.com', 'Kaloor', 'Kadavanthra', '2023-11-04', '02:31:00', '160', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -298,7 +299,9 @@ INSERT INTO `payment` (`payment_id`, `booking_id`, `amount`, `paid_date`) VALUES
 (38, '97', '1000', '2023-10-28 12:33:08'),
 (39, '98', '300', '2023-10-30 05:45:21'),
 (40, '104', '700', '2023-10-31 11:58:00'),
-(41, '105', '900', '2023-10-31 12:03:26');
+(41, '105', '900', '2023-10-31 12:03:26'),
+(42, '107', '240', '2023-11-04 09:59:07'),
+(43, '110', '160', '2023-11-04 10:02:24');
 
 -- --------------------------------------------------------
 
@@ -325,9 +328,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
-(11, 's1proimage.jpeg', 's1', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '3', 'Well maintained', '100'),
+(11, 's1proimage.jpeg', 's1', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '2', 'Well maintained', '100'),
 (12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '3', 'well maintained', '100'),
-(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '4', 'well maintained', '100');
+(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '3', 'well maintained', '100');
 
 -- --------------------------------------------------------
 
@@ -441,7 +444,7 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `complaint`
@@ -489,7 +492,7 @@ ALTER TABLE `otp`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `product`
