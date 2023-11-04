@@ -11,6 +11,9 @@ $id=$_GET['id'];
    $sql1="select * from registration where email_id='$username'" ;
    $res1=select_data($sql1);
    $arr1=mysqli_fetch_assoc($res1);
+
+   $sql2="select user_email from booking where user_email='$username' ";
+   
    ?>
 
 
@@ -47,6 +50,7 @@ $id=$_GET['id'];
               <!-- General Form Elements -->
               <form action="./php/booking1.php?id=<?php echo $arr['product_id'] ?>" method="POST">
                 <div class="row mb-3">
+                  
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Name</label>
                   <div class="col-sm-10">
                   <input name="scootername" type="text" class="form-control" id="scootername" value=<?php echo $arr['scooter_name'];?>>
@@ -65,6 +69,26 @@ $id=$_GET['id'];
                   </div>
                 </div>
                 
+                <?php
+                 $sql2="select user_email from booking where user_email='$username' ";
+                 $data=select_data($sql2);
+                 $count=mysqli_num_rows($data);
+                 if($count>=4)
+                 {
+                  $total=100-(100*20/100);
+                 ?>
+                <div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">scooter Rate</label>
+                  <div class="col-sm-10">
+                  <input name="scooterrate" type="text" class="form-control" id="scooterrate" value=<?php echo $total; ?>>
+                  </div>
+                </div>
+                <?php
+                 }
+                 else
+                 {
+                ?>
                 <div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">scooter Rate</label>
@@ -72,6 +96,9 @@ $id=$_GET['id'];
                   <input name="scooterrate" type="text" class="form-control" id="scooterrate" value=<?php echo $arr['amount'];?>>
                   </div>
                 </div>
+                <?php
+                 }
+                 ?>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">User Name</label>
                   <div class="col-sm-10">

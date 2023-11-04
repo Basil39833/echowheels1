@@ -27,7 +27,10 @@ include("header.php");
             <?php
             $sql = "select * from product where stock>0";
             $res = select_data($sql);
+          
             while ($row = mysqli_fetch_assoc($res)) {
+          
+              
             ?>
                 <div class="col-md-3" style="margin:0px;display: inline-block;">
                     <div class="card">
@@ -44,6 +47,17 @@ include("header.php");
                             <p class="card-text"><b>Description:</b> <?php echo $row['description']; ?></p>
                             <p class="card-text"><b>Rate:</b> <?php echo $row['amount']; ?></p>
                             <p> 
+                              <?php
+                              $sql2="select user_email from booking where user_email='$username' ";
+                              $data=select_data($sql2);
+                              $count=mysqli_num_rows($data);
+                              if($count>=4)
+                              {
+                                echo " 20% off";
+                              }
+                              
+                              ?>
+                              </p>
                       <div class="btn-group">
                       <a href="./bookingform.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Book Now</a>
                         
@@ -61,7 +75,7 @@ include("header.php");
 
         </div>
         </div>
-        
+        <form>
     </section>
     </main><!-- End #main -->
 

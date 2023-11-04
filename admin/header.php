@@ -544,10 +544,10 @@ require("../connect.php");
           <span>Booking History</span>
         </a>
 
-      <!--<li class="nav-item">
-        <a class="nav-link collapsed" href=./complaint.php>
-          <i class="bi bi-envelope"></i>
-          <span>Notification</span>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href=./paymenthistory.php>
+          <i class="bi bi-card-list"></i>
+          <span>Payment History</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
