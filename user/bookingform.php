@@ -53,19 +53,19 @@ $id=$_GET['id'];
                   
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Name</label>
                   <div class="col-sm-10">
-                  <input name="scootername" type="text" class="form-control" id="scootername" value=<?php echo $arr['scooter_name'];?>>
+                  <input name="scootername" type="text" class="form-control" id="scootername" value='<?php echo $arr['scooter_name'];?>'>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Category</label>
                   <div class="col-sm-10">
-                  <input name="scootercategory" type="text" class="form-control" id="scootercategory" value=<?php echo $arr['scooter_category'];?>>
+                  <input name="scootercategory" type="text" class="form-control" id="scootercategory" value='<?php echo $arr['scooter_category'];?>'>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Color</label>
                   <div class="col-sm-10">
-                  <input name="scootercolor" type="text" class="form-control" id="scootercolor" value=<?php echo $arr['color'];?>>
+                  <input name="scootercolor" type="text" class="form-control" id="scootercolor" value='<?php echo $arr['color'];?>'>
                   </div>
                 </div>
                 
@@ -102,7 +102,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">User Name</label>
                   <div class="col-sm-10">
-                  <input name="username" type="text" class="form-control" id="username" value= <?php echo $arr1['first_name'];?>>
+                  <input name="username" type="text" class="form-control" id="username" value= '<?php echo $arr1['first_name'];?>'>
                   </div>
                 </div>
                 <div class="row mb-3">

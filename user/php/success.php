@@ -49,29 +49,31 @@
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'echowheels7@gmail.com';
-        $mail->Password = 'ejbfqdrplwzqysuu';
+        $mail->Password = 'fqjthfdthafbqxte';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
         $mail->setFrom($email);
-    
+        
         $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = "Booking Successfull";
-        $mail->Body = "
-        <html>
-        <body>
-        Hi,<br>
-        Your booking from EchoWheels has been placed successfully. Please find the order ids below.
-        <br><br>
-        <br><br>
-        Thank You<br>
-        Team EchoWheels
-        
-        </body>
-        </html>
-        ";
-    
-        $mail->send();
+        $message = file_get_contents('../../mail-templates/payment.html'); // Load your HTML content
+
+#
+     // Replace placeholders with actual dynamic data
+   
+    #$currentDate = date('Y-m-d');
+    $message = str_replace('{{amt}}', $amt, $message);
+    $message = str_replace('{{id}}', $bid, $message);
+   
+
+    $mail->Body = $message;
+// #die();
+//     $mail->Body = $message;
+    $mail->AltBody = 'If you cannot view this email, please contact support.';
+
+    // Send the email
+    $mail->send();
 
     ?>
     <script>

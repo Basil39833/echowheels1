@@ -54,7 +54,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Name</label>
                   <div class="col-sm-10">
-                  <input name="scootername" type="text" class="form-control" id="scootername" value=<?php echo $arr['scooter_name'];?>>
+                  <input name="scootername" type="text" class="form-control" id="scootername" value='<?php echo $arr['scooter_name'];?>'>
                   </div>
                 </div>
 
@@ -94,7 +94,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputEmail" class="col-sm-2 col-form-label">Pickup Station</label>
                   <div class="col-sm-10">
-                  <input name="pickupstation" type="text" class="form-control" id="pickupstation" value= <?php echo $arr2['pickup_station'];?>>
+                  <input name="pickupstation" type="text" class="form-control" id="pickupstation" value= '<?php echo $arr2['pickup_station'];?>'>
                   </div>
                 </div>
 
@@ -103,7 +103,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputEmail" class="col-sm-2 col-form-label">Drop Station</label>
                   <div class="col-sm-10">
-                  <input name="dropstation" type="text" class="form-control" id="dropstation" value= <?php echo $arr2['drop_station'];?>>
+                  <input name="dropstation" type="text" class="form-control" id="dropstation" value= '<?php echo $arr2['drop_station'];?>'>
                   </div>
                 </div>
                                   <div class="row mb-3">

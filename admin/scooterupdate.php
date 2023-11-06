@@ -64,13 +64,13 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Category</label>
                   <div class="col-sm-10">
-                  <input name="scooter_category" type="text" class="form-control" id="scooter_category" value=<?php echo $arr['scooter_category'];?>>
+                  <input name="scooter_category" type="text" class="form-control" id="scooter_category" value='<?php echo $arr['scooter_category'];?>'>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Color</label>
                   <div class="col-sm-10">
-                  <input name="color" type="text" class="form-control" id="color" value=<?php echo $arr['color'];?>>
+                  <input name="color" type="text" class="form-control" id="color" value='<?php echo $arr['color'];?>'>
                   </div>
                 </div>
                 <!--<div class="row mb-3">
@@ -82,7 +82,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter brand</label>
                   <div class="col-sm-10">
-                  <input name="scooter_brand" type="text" class="form-control" id="scooter_brand" value=<?php echo $arr['scooter_brand'];?>>
+                  <input name="scooter_brand" type="text" class="form-control" id="scooter_brand" value='<?php echo $arr['scooter_brand'];?>'>
                   </div>
                 </div>
                 <div class="row mb-3">

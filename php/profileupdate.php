@@ -26,8 +26,35 @@ if(isset($_POST["submit"])){
     
 
     
-    $sql="UPDATE registration SET `first_name`='$fname',`last_name`='$lname',`contact`='$contact',`house_name`='$house_name',`street_name`='$street_name',`district_name`='$district',`state_name`='$state',`pincode`='$pincode',`date_of_birth`='$dateofbirth' WHERE `email_id`='$email';";
-if(update_data($sql)) { 
+    $selfpic = $_POST['selfpic'];
+
+    $filename = $_FILES["uploadfile"]["name"];
+    $tempname = $_FILES["uploadfile"]["tmp_name"];
+    $folder = "../user/uploads/products/" . $filename;
+    $delfolder = "../user/uploads/products/".$selfpic;
+
+    if($filename !=  null)
+    {
+        $newpic = $filename;
+    }
+    else 
+    {
+        $newpic = $selfpic;
+    }
+
+
+$sql="UPDATE registration SET first_name='$fname',last_name='$lname',contact='$contact',house_name='$house_name',street_name='$street_name',district_name='$district',state_name='$state',pincode='$pincode',date_of_birth='$dateofbirth',profilepicture='$newpic' WHERE email_id='$email';";
+if(update_data($sql)) {
+ 
+    if($filename !=  null)
+    {
+        if($selfpic != "pic.jpg"){
+            unlink($delfolder);
+        }
+        
+        move_uploaded_file($tempname, $folder);
+    } 
+
         ?>
         <script>
             Swal.fire({

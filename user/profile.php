@@ -31,9 +31,15 @@ include("header.php");
 
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+              <?php
+            
+   $sql="select * from registration where email_id='$username'" ;
+   $res=select_data($sql);
+   $arr=mysqli_fetch_assoc($res);
+   ?>
 
-              <img src="assets/img/pic.jpg" alt="Profile" class="rounded-circle">
-              <h2><?php echo $arr['first_name'];?> <?php echo $arr['last_name'];?></h2>
+            <img src="./uploads/products/<?php echo $arr ['profilepicture']; ?>" alt="Profile" class="rounded-circle">
+              <h2><?php echo $arr['first_name']," ",$arr['last_name'];?>
               <!--<h3>Web Designer</h3>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -129,14 +135,19 @@ include("header.php");
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form action="../php/profileupdate.php" method="post">
+                  <form action="../php/profileupdate.php" method="post" enctype="multipart/form-data"> 
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="assets/img/pic.jpg" alt="Profile">
+                        <img src="./uploads/products/<?php echo $arr['profilepicture']; ?>"alt="Profile" class="rounded-circle">
                         <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                        <div class="file-field">  
+                                <input type="file" id="upbtn" name="uploadfile" value="" hidden/>
+                                <input name="selfpic" type="text" value="<?php echo $arr['profilepicture']; ?>"  value="" hidden/>
+                                <label class="btn btn-primary" for="upbtn">
+                                  <i class="bi bi-upload" style="color: #fff;"></i>
+                                </label>      
+                           </div>
                         </div>
                       </div>
                     </div>
