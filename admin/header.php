@@ -293,14 +293,14 @@ require("../connect.php");
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      <!--<li class="nav-item">
-        <a class="nav-link collapsed" href="index.php">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index1.php">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Home</span>
         </a>
       </li><!-- End Dashboard Nav 
 
-      <li class="nav-item">
+      <!--<li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -449,7 +449,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Complaints & Feedbacks</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-card-list"></i><span>Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -462,7 +462,7 @@ require("../connect.php");
               <i class="bi bi-circle"></i><span>Viewed Complaints</span>
             </a>
           </li>
-          <li>
+          <!--<li>
             <a href="feedbacks.php">
               <i class="bi bi-circle"></i><span>Feedbacks</span>
             </a>
@@ -471,7 +471,7 @@ require("../connect.php");
             <a href="viewedfeedbacks.php">
               <i class="bi bi-circle"></i><span>viewedFeedback</span>
             </a>
-          </li>
+          </li>-->
           <!--<li>
             <a href="icons-boxicons.html">
               <i class="bi bi-circle"></i><span>Boxicons</span>
@@ -519,7 +519,7 @@ require("../connect.php");
       <li class="nav-item">
         <a class="nav-link collapsed" href=./viewscooter.php>
         <i class="bi bi-card-list"></i>
-          <span>ViewScooter</span>
+          <span>UpdateScooter</span>
         </a>
       </li><!-- End Error 404 Page Nav -->
       <li class="nav-item">

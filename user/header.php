@@ -493,7 +493,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Booked Scooters</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Bookings</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -533,7 +533,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Complaints & feedbacks</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-card-list"></i><span>Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -546,7 +546,7 @@ require("../connect.php");
               <i class="bi bi-circle"></i><span>Replayed Complaints</span>
             </a><!-- End Blank Page Nav -->
             <li>
-            <a href="./feedback.php">
+          <!--  <a href="./feedback.php">
               <i class="bi bi-circle"></i><span>Create feedback</span>
             </a>
           </li>
@@ -555,7 +555,7 @@ require("../connect.php");
             <a href="./replayedfeebacks.php">
               <i class="bi bi-circle"></i><span>Replayed feedbacks</span>
             </a>
-          </li>
+          </li>-->
           <li>
 </ul>
 
