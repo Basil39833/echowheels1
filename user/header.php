@@ -298,7 +298,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="viewscooter.php">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-house"></i>
           <span>Home</span>
         </a>
       </li><!-- End Dashboard Nav 
@@ -493,7 +493,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Bookings</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-cart3"></i><span>Bookings</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -533,7 +533,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-box-seam"></i><span>Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -562,7 +562,7 @@ require("../connect.php");
 
 <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#history-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>History</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-book"></i><span>History</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="history-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
