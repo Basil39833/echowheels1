@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2023 at 10:15 AM
+-- Generation Time: Nov 13, 2023 at 06:52 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,11 +50,16 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `scooter_name`, `scooter_category`, `scooter_color`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `rent_hours`, `total`, `payment`, `status`) VALUES
-(97, 's1', 'Top', 'Mat', 11, '100', 'Benson', 'benson123@gmail.com', 'Aluva', 'Pettah', '2023-10-28', '10:02:00', '1000', 0, 2),
-(98, 's1ProGen2', 'Top', 'Black', 12, '100', 'Basil', 'basilshajan555@gmail.com', 'Aluva', 'Town Hall', '2023-10-30', '03:14:00', '300', 0, 2),
-(104, '450X', 'Normal', 'Red', 13, '100', 'Benson', 'benson123@gmail.com', 'Palarivattom', 'Town Hall', '2023-11-16', '07:25:00', '700', 0, 1),
-(105, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'Changampuzha Park', 'MG Road', '2023-10-31', '09:32:00', '900', 0, 2),
-(110, '450X', 'Normal', 'Red', 13, '80', 'Benson', 'benson123@gmail.com', 'Kaloor', 'Kadavanthra', '2023-11-04', '02:31:00', '160', 0, 2);
+(97, 's1', 'Top', 'Mat', 11, '100', 'Benson', 'benson123@gmail.com', 'Aluva', 'Pettah', '2023-10-28', '10:02:00', '1000', 1, 2),
+(98, 's1ProGen2', 'Top', 'Black', 12, '100', 'Basil', 'basilshajan555@gmail.com', 'Aluva', 'Town Hall', '2023-10-30', '03:14:00', '300', 1, 2),
+(104, '450X', 'Normal', 'Red', 13, '100', 'Benson', 'benson123@gmail.com', 'Palarivattom', 'Town Hall', '2023-11-16', '07:25:00', '700', 1, 2),
+(105, 's1ProGen2', 'Top', 'Black', 12, '100', 'Benson', 'benson123@gmail.com', 'Changampuzha Park', 'MG Road', '2023-10-31', '09:32:00', '900', 1, 2),
+(110, '450X', 'Normal', 'Red', 13, '80', 'Benson', 'basilkreji14@gmail.com', 'Kaloor', 'Kadavanthra', '2023-11-04', '02:31:00', '160', 1, 2),
+(129, 's1Pro Gen2', 'Top', 'Black', 12, '200', 'eldho', 'eldhowilson22@gmail.com', 'CUSAT', 'Ernakulam South', '2023-11-10', '02:45:00', '400', 1, 2),
+(130, '450X', 'Normal', 'Red', 13, '100', 'Benson', 'benson123@gmail.com', 'Palarivattom', 'Ernakulam South', '2023-11-09', '02:50:00', '200', 1, 2),
+(131, 's1Pro Gen2', 'Normal', 'Black', 12, '100', 'Basil', 'basilkreji14@gmail.com', 'CUSAT', 'Town Hall', '2023-11-11', '03:02:00', '300', 1, 2),
+(132, 's1pro', 'Normal', 'Mat Green', 11, '100', 'Basil', 'basilkreji14@gmail.com', 'MG Road', 'Maharaja’s College', '2023-11-11', '05:09:00', '500', 1, 2),
+(134, 's1pro', 'Normal', 'Mat Green', 11, '100', 'Basil', 'basilkreji14@gmail.com', 'Pathadipalam', 'JLN Stadium', '2023-11-11', '08:02:00', '800', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +87,8 @@ INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`,
 (19, 'service', 'scooter should be serviced', 'service', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
 (20, 'website', 'website should be more colour full', 'website', '2023-10-07', 'benson123@gmail.com', '1', 'kk we will work on it'),
 (22, 'scooter tyre', 'tyre have to be changed', 'scooter', '2023-10-26', 'basilkreji14@gmail.com', '1', 'we will work on it'),
-(23, 'website', 'website is to slow', 'website', '2023-10-27', 'basilkreji14@gmail.com', '0', '');
+(23, 'website', 'website is to slow', 'website', '2023-10-27', 'basilkreji14@gmail.com', '1', 'kk we will work on it'),
+(24, 'scooter', 'scooter have to be serviced', 'scooter', '2023-11-11', 'basilkreji14@gmail.com', '0', '');
 
 -- --------------------------------------------------------
 
@@ -143,8 +149,11 @@ CREATE TABLE `extendbooking` (
 --
 
 INSERT INTO `extendbooking` (`extend_id`, `booking_id`, `scooter_name`, `scooter_id`, `scooter_rate`, `user_name`, `user_email`, `pickup_station`, `drop_station`, `booking_date`, `extend_rent_hour`, `extend_total`, `extend_payment`, `status`) VALUES
-(12, 97, 's1', '11 ', '100', 'Benson', 'benson123@gmail.com', 'Aluva', 'Pettah', '2023-10-28', '02:03:00', '200', 0, 2),
-(14, 105, 's1ProGen2', '12 ', '100', 'Benson', 'benson123@gmail.com', 'Changampuzha', 'MG', '2023-10-31', '07:37:00', '700', 0, 2);
+(12, 97, 's1', '11 ', '100', 'Benson', 'benson123@gmail.com', 'Aluva', 'Pettah', '2023-10-28', '02:03:00', '200', 1, 2),
+(14, 105, 's1ProGen2', '12 ', '100', 'Benson', 'benson123@gmail.com', 'Changampuzha', 'MG', '2023-10-31', '07:37:00', '700', 1, 2),
+(15, 113, 's1ProGen2', '12 ', '100', 'Basil', 'basilkreji14@gmail.com', 'Aluva', 'Pathadipalam', '2023-11-06', '03:48:00', '300', 1, 2),
+(16, 115, '450X', '13 ', '100', 'Basil', 'basilkreji14@gmail.com', 'Companypady', 'MG', '2023-11-06', '01:55:00', '100', 1, 2),
+(20, 132, 's1pro', '11 ', '100', 'Basil', 'basilkreji14@gmail.com', 'MG Road', 'Maharaja’s College', '2023-11-11', '03:14:00', '300', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -165,31 +174,12 @@ CREATE TABLE `extendpayment` (
 
 INSERT INTO `extendpayment` (`extendpayment_id`, `extendbooking_id`, `extend_amount`, `paid_date`) VALUES
 (25, 12, 200, '2023-10-28 12:34:05'),
-(26, 14, 700, '2023-10-31 12:10:07');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feedback`
---
-
-CREATE TABLE `feedback` (
-  `feedback_id` int(50) NOT NULL,
-  `email_id` varchar(50) NOT NULL,
-  `description` varchar(50) NOT NULL,
-  `date` date NOT NULL,
-  `reply` varchar(70) NOT NULL,
-  `message` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `feedback`
---
-
-INSERT INTO `feedback` (`feedback_id`, `email_id`, `description`, `date`, `reply`, `message`) VALUES
-(2, 'benson123@gmail.com', 'I had a nice experience while driving the scooter', '2023-10-14', '1', 'Thank you for your valuable feedback'),
-(3, 'basilkreji14@gmail.com', 'nice experience ', '2023-10-26', '1', 'thank you'),
-(4, 'basilkreji14@gmail.com', 'nice services', '2023-10-27', '1', 'thank you');
+(26, 14, 700, '2023-10-31 12:10:07'),
+(27, 15, 300, '2023-11-06 10:19:36'),
+(28, 16, 100, '2023-11-06 10:26:24'),
+(29, 17, 700, '2023-11-06 10:59:35'),
+(30, 17, 700, '2023-11-06 11:00:20'),
+(31, 20, 300, '2023-11-11 08:45:41');
 
 -- --------------------------------------------------------
 
@@ -212,7 +202,8 @@ INSERT INTO `login` (`email_id`, `password`, `user_type`, `user_status`) VALUES
 ('admin1234@gmail.com', 'admin1234', '0', '1'),
 ('basilkreji14@gmail.com', 'basil', '1', '1'),
 ('basilshajan55@gmail.com', 'shajan', '1', '1'),
-('benson123@gmail.com', 'benson', '1', '1');
+('benson123@gmail.com', 'benson', '1', '1'),
+('eldhowilson22@gmail.com', '12345678', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -276,7 +267,8 @@ CREATE TABLE `otp` (
 INSERT INTO `otp` (`id`, `email`, `otp`, `expiry`, `sendtime`) VALUES
 (9, 'basilkreji14@gmail.com', '232774', '2023-10-28 07:24:35', '2023-10-28 05:09:56'),
 (10, 'basilkreji14@gmail.com', '351259', '2023-10-28 07:26:07', '2023-10-28 05:11:21'),
-(11, 'basilshajan555@gmail.com', '326803', '2023-10-30 06:04:59', '2023-10-30 04:50:03');
+(11, 'basilshajan555@gmail.com', '326803', '2023-10-30 06:04:59', '2023-10-30 04:50:03'),
+(12, 'basilkreji14@gmail.com', '412047', '2023-11-06 17:08:27', '2023-11-06 15:53:32');
 
 -- --------------------------------------------------------
 
@@ -301,7 +293,11 @@ INSERT INTO `payment` (`payment_id`, `booking_id`, `amount`, `paid_date`) VALUES
 (40, '104', '700', '2023-10-31 11:58:00'),
 (41, '105', '900', '2023-10-31 12:03:26'),
 (42, '107', '240', '2023-11-04 09:59:07'),
-(43, '110', '160', '2023-11-04 10:02:24');
+(64, '129', '400', '2023-11-09 08:19:41'),
+(65, '130', '200', '2023-11-09 09:21:49'),
+(66, '131', '300', '2023-11-11 08:33:32'),
+(67, '132', '500', '2023-11-11 08:39:41'),
+(68, '134', '800', '2023-11-11 13:35:12');
 
 -- --------------------------------------------------------
 
@@ -328,9 +324,32 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `scooter_name`, `scooter_category`, `scooter_model_year`, `scooter_brand`, `scooter_plate_number`, `color`, `stock`, `description`, `amount`) VALUES
-(11, 's1proimage.jpeg', 's1', 'Top', '2022', 'Echo', 'kl-17-2022', 'Mat', '2', 'Well maintained', '100'),
-(12, 's1progen2image.png', 's1ProGen2', 'Top', '2022', 'Echo', 'kl-17-2022', 'Black', '3', 'well maintained', '100'),
-(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '3', 'well maintained', '100');
+(11, 's1proimage.jpeg', 's1pro', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Mat Green', '4', 'Well maintained', '100'),
+(12, 's1progen2image.png', 's1Pro Gen2', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Black', '5', 'well maintained', '100'),
+(13, '450xgen3image.jpeg', '450X', 'Normal', '2022', 'Echo', 'kl-17-2022', 'Red', '5', 'well maintained', '100');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rating`
+--
+
+CREATE TABLE `rating` (
+  `review_id` int(11) NOT NULL,
+  `scooter_id` int(11) NOT NULL,
+  `email_id` varchar(100) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `review` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`review_id`, `scooter_id`, `email_id`, `rating`, `review`) VALUES
+(1, 11, 'basilkreji14@gmail.com', 3, 'good'),
+(2, 12, 'basilkreji14@gmail.com', 4, 'good'),
+(3, 13, 'basilkreji14@gmail.com', 3, 'good');
 
 -- --------------------------------------------------------
 
@@ -348,17 +367,19 @@ CREATE TABLE `registration` (
   `district_name` varchar(20) NOT NULL,
   `state_name` varchar(20) NOT NULL,
   `pincode` int(6) NOT NULL,
-  `date_of_birth` date NOT NULL
+  `date_of_birth` date NOT NULL,
+  `profilepicture` varchar(100) NOT NULL DEFAULT 'pic.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`first_name`, `last_name`, `contact`, `email_id`, `house_name`, `street_name`, `district_name`, `state_name`, `pincode`, `date_of_birth`) VALUES
-('Basil', 'k reji', '6238813582', 'basilkreji14@gmail.com', 'kuruttampurathu', 'pampakuda', 'Ernakulam', 'kerala', 686667, '2022-03-24'),
-('basil', 'shajan', '6767685789', 'basilshajan55@gmail.com', 'kkkk', 'yyyy', 'Alappuzha', 'hhh', 898988, '2014-09-25'),
-('Benson', 'k reji', '7561866943', 'benson123@gmail.com', 'kuruttampurathu', 'pampakuda', 'Ernakulam', 'kerala', 686667, '2006-05-23');
+INSERT INTO `registration` (`first_name`, `last_name`, `contact`, `email_id`, `house_name`, `street_name`, `district_name`, `state_name`, `pincode`, `date_of_birth`, `profilepicture`) VALUES
+('Basil', 'k reji', '6238813582', 'basilkreji14@gmail.com', 'kuruttampurathu', 'pampakuda', 'Ernakulam', 'kerala', 686667, '2022-03-24', 'IMG_3423_mr1685214100254_mh1685216492852.jpg'),
+('basil', 'shajan', '6767685789', 'basilshajan55@gmail.com', 'kkkk', 'yyyy', 'Alappuzha', 'hhh', 898988, '2014-09-25', 'pic.jpg'),
+('Benson', 'k reji', '7561866943', 'benson123@gmail.com', 'kuruttampurathu', 'pampakuda', 'Ernakulam', 'kerala', 686667, '2006-05-23', '20230614_113724 (3).jpg'),
+('eldho', 'wilson', '9074288916', 'eldhowilson22@gmail.com', 'house', 'aaa', 'Ernakulam', 'kerala', 686667, '2003-04-22', 'pic.jpg');
 
 --
 -- Indexes for dumped tables
@@ -395,12 +416,6 @@ ALTER TABLE `extendpayment`
   ADD PRIMARY KEY (`extendpayment_id`);
 
 --
--- Indexes for table `feedback`
---
-ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`feedback_id`);
-
---
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -431,6 +446,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Indexes for table `rating`
+--
+ALTER TABLE `rating`
+  ADD PRIMARY KEY (`review_id`);
+
+--
 -- Indexes for table `registration`
 --
 ALTER TABLE `registration`
@@ -444,13 +465,13 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `booking_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 --
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `complaint_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -462,19 +483,13 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `extendbooking`
 --
 ALTER TABLE `extendbooking`
-  MODIFY `extend_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `extend_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `extendpayment`
 --
 ALTER TABLE `extendpayment`
-  MODIFY `extendpayment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT for table `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `feedback_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `extendpayment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `metrostations`
@@ -486,19 +501,25 @@ ALTER TABLE `metrostations`
 -- AUTO_INCREMENT for table `otp`
 --
 ALTER TABLE `otp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `payment_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `product_id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `rating`
+--
+ALTER TABLE `rating`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
