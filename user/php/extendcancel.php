@@ -22,7 +22,7 @@ update_data($sql);
               icon: 'success',
               text: 'Booking Cancelled',
               didClose: () => {
-                window.location.replace('../viewscooter.php');
+                window.location.replace('../bookedscooter.php');
               }
             });
           </script>

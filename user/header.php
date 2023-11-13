@@ -543,7 +543,7 @@ require("../connect.php");
           </li>
           <li>
             <a href="replayedcomplaints.php">
-              <i class="bi bi-circle"></i><span>Replayed Complaints</span>
+              <i class="bi bi-circle"></i><span>Replied Complaints</span>
             </a><!-- End Blank Page Nav -->
             <li>
           <!--  <a href="./feedback.php">

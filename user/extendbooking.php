@@ -55,10 +55,11 @@ $username = $_SESSION['email_id'];
                                         Pay Now <span class="fa fa-play"></span>
                                     </button>
             </div>
-            <!--<div class="btn-group">
+            <div class="btn-group">
                       <a href="php/extendcancel.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
                         
-                      </div>--></p>
+                      </div>
+                    </p>
 
 
                         </div>

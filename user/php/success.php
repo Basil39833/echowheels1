@@ -42,6 +42,8 @@
             update_data($sql3);
             $sql4 = "UPDATE product SET stock=stock-1 WHERE product_id='$scooter_id'";
             update_data($sql4);
+            $sql5 = "UPDATE booking SET payment=1 WHERE booking_id='$product_id'";
+            update_data($sql5);
         }
 
         $mail = new PHPMailer(true);

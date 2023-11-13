@@ -39,6 +39,8 @@
             insert($sql2);*/
             $sql3 = "UPDATE extendbooking SET status=1 WHERE booking_id='$product_id'";
             update_data($sql3);
+            $sql4 = "UPDATE extendbooking SET extend_payment=1 WHERE booking_id='$product_id'";
+            update_data($sql4);
             
         }
         $mail = new PHPMailer(true);

@@ -16,7 +16,7 @@ include("header.php");
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
           <li class="breadcrumb-item">History</a></li>
-          <li class="breadcrumb-item active">Booking History</li>
+          <li class="breadcrumb-item active">Normal History</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

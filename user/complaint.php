@@ -18,11 +18,11 @@ include("header.php");
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Complaints & Feedbacks</h1>
+    <h1>Complaint</h1>
     <nav>
       <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="viewscooter.php">Home</a></li>
-      <li class="breadcrumb-item active">Complaints & Feedbacks</li> 
+      <li class="breadcrumb-item active">Complaints</li> 
           <li class="breadcrumb-item active">Create Complaint</li>
       </ol>
     </nav>
