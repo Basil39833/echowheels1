@@ -121,7 +121,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputdate" class="col-sm-2 col-form-label">Rent Date</label>
                   <div class="col-sm-10">
-                  <input name="rentdate" type="date" class="form-control" id="rentdate" >
+                  <input name="rentdate" type="date" class="form-control" id="rentdate" required>
                   </div>
                 </div>
 
@@ -130,8 +130,8 @@ $id=$_GET['id'];
                 <div class="col-sm-10">
               <div class="form-control">
 							<span class="fa fa-map-marker" aria-hidden="true"></span>
-								<select class="form-input"  name="pickupstation">
-                                    <option selected disabled>Select Station </option>
+								<select class="form-input"  name="pickupstation" required>
+                                    <option value=""selected hidden>Select Station </option>
                                     <?php
 									
                                     $sql = "select * from metrostations";
@@ -140,7 +140,7 @@ $id=$_GET['id'];
                                       while ($arr = mysqli_fetch_assoc($result)) {
                                     ?>
                                         <option value="<?php echo $arr['metrostation_name']; ?>">
-                                          <?php echo $arr['metrostation_name']; ?>
+                                          <?php echo $arr['metrostation_name']; ?> 
                                         </option>
                                     <?php
                                       }
@@ -157,8 +157,8 @@ $id=$_GET['id'];
                 <div class="col-sm-10">
               <div class="form-control">
 							<span class="fa fa-map-marker" aria-hidden="true"></span>
-								<select class="form-input"  name="dropstation">
-                                    <option selected disabled>Select Station </option>
+								<select class="form-input"  name="dropstation" required>
+                                    <option value=""selected hidden>Select Station </option>
                                     <?php
 									
                                     $sql = "select * from metrostations";
@@ -181,7 +181,7 @@ $id=$_GET['id'];
                                   <div class="row mb-3">
                   <label for="inputtime" class="col-sm-2 col-form-label">Rent Hours</label>
                   <div class="col-sm-10">
-                  <input name="renthours" type="time" class="form-control" id="renthours" >
+                  <input name="renthours" type="time" class="form-control" id="renthours" required>
                   </div>
                 </div>
 
@@ -311,6 +311,19 @@ $id=$_GET['id'];
         </div>
       </div>
     </section>
+    <script>
+    function avoidQuotationMarks(textarea) {
+      // Get the current textarea value
+      var descriptionValue = textarea.value;
+
+      // Replace double quotes and single quotes with an empty string
+      var sanitizedValue = descriptionValue.replace(/[']/g, '');
+
+      // Update the textarea with the sanitized value
+      textarea.value = sanitizedValue;
+    }
+  </script>
+
     <?php 
 
 include 'footer.html';

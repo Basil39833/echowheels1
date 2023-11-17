@@ -155,63 +155,63 @@ include("header.php");
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fname" type="text" class="form-control" id="fname" value='<?php echo $arr['first_name'];?>'>
+                        <input name="fname" type="text" class="form-control" id="fname"  value='<?php echo $arr['first_name'];?>'pattern="^[^\d]*$" title="Please only enter letters" required>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="lname" type="text" class="form-control" id="lname" value='<?php echo $arr['last_name'];?>'>
+                        <input name="lname" type="text" class="form-control" id="lname" value='<?php echo $arr['last_name'];?>'pattern="^[^\d]*$" title="Please only enter letters" required>
                       </div>
                     </div>
                     
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Contact</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="contact" type="text" class="form-control" id="contact" value=<?php echo $arr['contact'];?>>
+                        <input name="contact" type="text" class="form-control" id="contact" value=<?php echo $arr['contact'];?> pattern="^\d{10}$" title="Please enter a 10 digit number" required>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" disabled type="text" class="form-control" id="email" value=<?php echo $arr['email_id'];?>>
+                        <input name="email" disabled type="text" class="form-control" id="email" value=<?php echo $arr['email_id'];?> required>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">House Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="housename" type="text" class="form-control" id="hname" value=<?php echo $arr['house_name'];?>>
+                        <input name="housename" type="text" class="form-control" id="hname" value=<?php echo $arr['house_name'];?> required>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Street Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="streetname" type="text" class="form-control" id="sname" value=<?php echo $arr['street_name'];?>>
+                        <input name="streetname" type="text" class="form-control" id="sname" value=<?php echo $arr['street_name'];?> required>
                       </div>
                     </div>
                    
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">District</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="district" type="text" class="form-control" id="district" value=<?php echo $arr['district_name'];?>>
+                        <input name="district" type="text" class="form-control" id="district" value=<?php echo $arr['district_name'];?> required>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">State</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="statename" type="text" class="form-control" id="state" value=<?php echo $arr['state_name'];?>>
+                        <input name="statename" type="text" class="form-control" id="state" value=<?php echo $arr['state_name'];?> required>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Pincode</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="pincode" type="text" class="form-control" id="pincode" value=<?php echo $arr['pincode'];?>>
+                        <input name="pincode" type="text" class="form-control" id="pincode" value=<?php echo $arr['pincode'];?> pattern="^\d{6}$" title="Please enter exactly 6 digits" required>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">DOB</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="dateofbirth" type="text" class="form-control" id="dateofbirth" value=<?php echo $arr['date_of_birth'];?>>
+                        <input name="dateofbirth" type="text" class="form-control" id="dateofbirth" value=<?php echo $arr['date_of_birth'];?> pattern="^\d{4}-\d{2}-\d{2}$" required>
                       </div>
                     </div>
                   <div class="text-center">
@@ -270,21 +270,21 @@ include("header.php");
                   <div class="row mb-3">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="cpass" type="password" class="form-control" id="currentPassword">
+                        <input name="cpass" type="password" class="form-control" id="currentPassword" required>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="npass" type="password" class="form-control" id="newPassword">
+                        <input name="npass" type="password" class="form-control" id="newPassword" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" title="Password must include atleast one digit,one upper/lower case character,special character with no white space and contain minimum 8 characters"required>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="cnpass" type="password" class="form-control" id="renewPassword">
+                        <input name="cnpass" type="password" class="form-control" id="renewPassword" required>
                       </div>
                     </div>
 

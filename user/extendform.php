@@ -115,7 +115,7 @@ $id=$_GET['id'];
                                   <div class="row mb-3">
                   <label for="inputtime" class="col-sm-2 col-form-label">Extend Hours</label>
                   <div class="col-sm-10">
-                  <input name="extendedrenthours" type="time" class="form-control" id="extendedrenthours" >
+                  <input name="extendedrenthours" type="time" class="form-control" id="extendedrenthours" required>
                   </div>
                 </div>
 

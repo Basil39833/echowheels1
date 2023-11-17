@@ -27,30 +27,30 @@ require("./connect.php");
 					<h3>Create your account</h3>
 					<form action="php/phpreg.php" method="post" class="signin-form">
 						<div class="form-input">
-							<span class="fa fa-user" aria-hidden="true"></span> <input type="text" name="fname" placeholder="First name" required />
+							<span class="fa fa-user" aria-hidden="true"></span> <input type="text" name="fname" placeholder="First name" pattern="^[^\d]*$" title="Please only enter letters" required>
 						</div>
 						<div class="form-input">
-							<span class="fa fa-user" aria-hidden="true"></span> <input type="text" name="lname" placeholder="Last name" required />
+							<span class="fa fa-user" aria-hidden="true"></span> <input type="text" name="lname" placeholder="Last name" pattern="^[^\d]*$" title="Please only enter letters" required>
 						</div>
 						<div class="form-input">
-							<span class="fa fa-envelope" aria-hidden="true"></span> <input type="email" name="email" placeholder="Email" required />
+							<span class="fa fa-envelope" aria-hidden="true"></span> <input type="email" name="email" placeholder="Email" required>
 						</div>
 						<div class="form-input">
-							<span class="fa fa-phone" aria-hidden="true"></span> <input type="text" name="contact" placeholder="Contact" required />
+							<span class="fa fa-phone" aria-hidden="true"></span> <input type="text" name="contact" placeholder="Contact" pattern="^\d{10}$" title="Please enter a 10 digit number" required>
 						</div>
 						<div class="form-input">
-							<span class="fa fa-home" aria-hidden="true"></span> <input type="text" name="housename" placeholder="Housename" required />
+							<span class="fa fa-home" aria-hidden="true"></span> <input type="text" name="housename" placeholder="Housename" required>
 						</div>	
 						<div class="form-input">
-							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="streetname" placeholder="Streetname" required />
+							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="streetname" placeholder="Streetname" required>
 						</div>	
 						<div class="form-input">
-							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="statename" placeholder="State" required />
+							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="statename" placeholder="State" required>
 						</div>		
 						<div class="form-input">
 							<span class="fa fa-map-marker" aria-hidden="true"></span>
-								<select class="form-input"  name="district">
-                                    <option selected disabled>Select District</option>
+								<select class="form-input"  name="district" required>
+                                    <option value=""selected hidden>Select District</option>
                                     <?php
 									
                                     $sql = "select * from district";
@@ -69,16 +69,16 @@ require("./connect.php");
                     		</select>
 						</div>	
 						<div class="form-input">
-							<span class= "fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="pincode" placeholder="Pincode" required />
+							<span class= "fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="pincode" placeholder="Pincode" pattern="^\d{6}$" title="Please enter exactly 6 digits" required>
 						</div>		
 						<div class="form-input">
-							<span class="fa fa-birthday-cake" aria-hidden="true"></span> <input type="date" name="dateofbirth" placeholder="Date Of Birth" required />
+							<span class="fa fa-birthday-cake" aria-hidden="true"></span> <input type="date" name="dateofbirth" placeholder="Date Of Birth" pattern="^\d{4}-\d{2}-\d{2}$" required>
 						</div>	
 						<div class="form-input">
-							<span class="fa fa-lock" aria-hidden="true"></span> <input type="password" name="password" placeholder="Password" required />
+							<span class="fa fa-lock" aria-hidden="true"></span> <input type="password" name="password" placeholder="Password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" title="Password must include atleast one digit,one upper/lower case character,special character with no white space and contain minimum 8 characters"required>
 						</div>
 						<div class="form-input">
-							<span class="fa fa-lock" aria-hidden="true"></span> <input type="password" name="cpassword" placeholder="confirm passsword" required />
+							<span class="fa fa-lock" aria-hidden="true"></span> <input type="password" name="cpassword" placeholder="confirm passsword" required>
 						</div>				
 						<div class="login-remember d-grid">
 							<label class="check-remaind">

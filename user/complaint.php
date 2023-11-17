@@ -49,8 +49,8 @@ include("header.php");
         <div class="col-md-6">
           <div class="col-md-12">
             <div class="form-floating mb-3">
-              <select class="form-select" id="type" aria-label="State" name="type">
-                <option selected disabled>Select Type</option>
+              <select class="form-select" id="type" aria-label="State" name="type" required>
+                <option value=""selected hidden>Select Type</option>
 
                 
                   <option value="scooter">Scooter</option>
@@ -67,7 +67,7 @@ include("header.php");
 
         <div class="col-md-12">
           <div class="form-floating">
-            <input type="text" class="form-control" id="title" placeholder="Name of Context" name="title">
+            <input type="text" class="form-control" id="title" placeholder="Name of Context" name="title" required>
             <label for="floatingName">Title of the complaint</label>
           </div>
         </div>
@@ -95,7 +95,7 @@ include("header.php");
         <div class="col-12">
           <div class="form-floating">
             <textarea class="form-control" placeholder="Discription" id="description" name="description"
-              style="height: 100px;"></textarea>
+              style="height: 100px;" maxlength="500" oninput="avoidQuotationMarks(this);" required></textarea>
             <label for="floatingTextarea">Description</label>
           </div>
         </div>
@@ -116,6 +116,18 @@ include("header.php");
   </div>
   </div>
   </section>
+  <script>
+    function avoidQuotationMarks(textarea) {
+      // Get the current textarea value
+      var descriptionValue = textarea.value;
+
+      // Replace double quotes and single quotes with an empty string
+      var sanitizedValue = descriptionValue.replace(/[']/g, '');
+
+      // Update the textarea with the sanitized value
+      textarea.value = sanitizedValue;
+    }
+  </script>
 
 </main><!-- End #main -->
 

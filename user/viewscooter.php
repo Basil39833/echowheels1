@@ -151,7 +151,7 @@ include("header.php");
         <form action="php/addrating.php" method="POST">
           <div class="modal-body">
 
-            <input type="text" id="productid" name="productid" value="" hidden>
+            <input type="text" id="productid" name="productid" value="" hidden >
 
             <div class="row mb-3">
             
@@ -176,7 +176,7 @@ include("header.php");
             <div class="row mb-3">
               <label for="inputPassword" class="col-sm-2 col-form-label">Comment</label>
               <div class="col-sm-10">
-                <textarea class="form-control" style="height: 100px" name="comment" maxlength="100"></textarea>
+                <textarea class="form-control" style="height: 100px" name="comment" maxlength="100" required></textarea>
               </div>
             </div>
 

@@ -259,14 +259,14 @@ include("header.php");
                   <div class="row mb-12">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="cpass" type="password" class="form-control" id="currentPassword">
+                        <input name="cpass" type="password" class="form-control" id="currentPassword" required>
                       </div>
                     </div>
 
                     <div class="row mb-12">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="npass" type="password" class="form-control" id="newPassword">
+                        <input name="npass" type="password" class="form-control" id="newPassword" required>
                       </div>
                     </div>
                     <br>
@@ -274,7 +274,7 @@ include("header.php");
                     <div class="row mb-12">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="cnpass" type="password" class="form-control" id="renewPassword">
+                        <input name="cnpass" type="password" class="form-control" id="renewPassword" required>
                       </div>
                     </div>
 

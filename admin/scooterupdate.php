@@ -52,55 +52,55 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">scooter id</label>
                   <div class="col-sm-10">
-                  <input name="product_id" type="text" class="form-control" id="product_id" value=<?php echo $arr['product_id'];?>>
+                  <input name="product_id" type="text" class="form-control" id="product_id" value='<?php echo $arr['product_id'];?>' required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Name</label>
                   <div class="col-sm-10">
-                  <input name="scooter_name" type="text" class="form-control" id="scooter_name" value='<?php echo $arr['scooter_name'];?>'>
+                  <input name="scooter_name" type="text" class="form-control" id="scooter_name" value='<?php echo $arr['scooter_name'];?>' required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Category</label>
                   <div class="col-sm-10">
-                  <input name="scooter_category" type="text" class="form-control" id="scooter_category" value='<?php echo $arr['scooter_category'];?>'>
+                  <input name="scooter_category" type="text" class="form-control" id="scooter_category" value='<?php echo $arr['scooter_category'];?>' required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Color</label>
                   <div class="col-sm-10">
-                  <input name="color" type="text" class="form-control" id="color" value='<?php echo $arr['color'];?>'>
+                  <input name="color" type="text" class="form-control" id="color" value='<?php echo $arr['color'];?>'required>
                   </div>
                 </div>
                 <!--<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter model year</label>
                   <div class="col-sm-10">
-                  <input name="scooter_model_year" type="text" class="form-control" id="scooter_model_year" value=<?php echo $arr['scooter_model_year'];?>>
+                  <input name="scooter_model_year" type="text" class="form-control" id="scooter_model_year" value=<?php echo $arr['scooter_model_year'];?>required>
                   </div>
                 </div>-->
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter brand</label>
                   <div class="col-sm-10">
-                  <input name="scooter_brand" type="text" class="form-control" id="scooter_brand" value='<?php echo $arr['scooter_brand'];?>'>
+                  <input name="scooter_brand" type="text" class="form-control" id="scooter_brand" value='<?php echo $arr['scooter_brand'];?>'required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Stock</label>
                   <div class="col-sm-10">
-                  <input name="stock" type="text" class="form-control" id="stock" value=<?php echo $arr['stock'];?>>
+                  <input name="stock" type="text" class="form-control" id="stock" value='<?php echo $arr['stock'];?>' required>
                   </div>
                 </div>
                 <!--<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Description</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" style="height: 100px"  id="description" name="description"  value=<?php echo $arr['description'];?>></textarea>
+                    <textarea class="form-control" style="height: 100px"  id="description" name="description"  value=<?php echo $arr['description'];?>required></textarea>
                   </div>
                 </div>-->
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Amount</label>
                   <div class="col-sm-10">
-                  <input name="amount" type="text" class="form-control" id="amount" value=<?php echo $arr['amount'];?>>
+                  <input name="amount" type="text" class="form-control" id="amount" value='<?php echo $arr['amount'];?>' required>
                   </div>
                 </div>
 

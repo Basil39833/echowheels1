@@ -35,8 +35,8 @@ $id = $_GET['id'];
             Please fill details to send the replay
           </div>
           <form class="com-mail" method="POST" action="php/complaintviewing.php">
-          <input type="hidden" name="complaint_id" value="<?php echo $id; ?>">
-            <textarea rows="12" class="form-control1 control2" placeholder="Replay :" name="message"></textarea>
+          <input type="hidden" name="complaint_id" value="<?php echo $id; ?>" >
+            <textarea rows="12" class="form-control1 control2" placeholder="Replay :" name="message" required></textarea>
             <input type="submit" value="Send Message">
           </form>
         </div>

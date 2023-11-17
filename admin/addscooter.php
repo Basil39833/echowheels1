@@ -37,15 +37,15 @@ include("header.php");
               <!-- General Form Elements -->
               <form method="POST" action="php/product.php" role="form" enctype="multipart/form-data" onsubmit="return check()">
               <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Photo Upload</label>
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Upload Photo</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="file" id="photo" name="photo" required="">
+                    <input class="form-control" type="file" id="photo" name="photo" required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Name</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="scootername" name="scootername" required="" >
+                    <input type="text" class="form-control" id="scootername" name="scootername" required>
                   </div>
                 </div>
                 <!--<fieldset class="row mb-3">
@@ -74,10 +74,10 @@ include("header.php");
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Category</label>
                   <div class="col-sm-10">
-                  <select class="form-control" name="category" id="category">
+                  <select class="form-control" name="category" id="category" required>
                         <option value="" select any> </option>
-                        <option value="Normal">Normal Model</option>
-                        <option value="Top">Top Model</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Top">Top</option>
                         
                         <!--<option value="VolleyBall">Volleyall</option>-->
                     </select>
@@ -86,26 +86,26 @@ include("header.php");
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Model Year</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="modelyear" name="modelyear" required="">
+                    <input type="text" class="form-control" id="modelyear" name="modelyear" required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Brand</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="scooterbrand" name="scooterbrand" required="">
+                    <input type="text" class="form-control" id="scooterbrand" name="scooterbrand" required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Scooter Plate Number</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="platenumber" name="platenumber" required="">
+                    <input type="text" class="form-control" id="platenumber" name="platenumber" required>
                   </div>
                 </div>
                 
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Color</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="color" name="color" required="">
+                    <input type="text" class="form-control" id="color" name="color" required>
                   </div>
                 </div>
                 <!--<div class="row mb-3">
@@ -124,14 +124,14 @@ include("header.php");
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Description</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" style="height: 100px"  id="description" name="description" required=""></textarea>
+                    <textarea class="form-control" style="height: 100px"  id="description" name="description" required></textarea>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Stock</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="stock" name="stock" required="">
+                    <input type="text" class="form-control" id="stock" name="stock" required>
                   </div>
                 </div>
                
@@ -140,7 +140,7 @@ include("header.php");
                 <div class="input-group mb-3">
                 <label for="inputText" class="col-sm-2 col-form-label">Amount</label>
                       <span class="input-group-text">RS</span>
-                      <input type="text" class="form-control" id="amount" name="amount" required="">
+                      <input type="text" class="form-control" id="amount" name="amount" required>
                       <!--<span class="input-group-text">.00</span>-->
                     </div>
 
